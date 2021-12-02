@@ -1,26 +1,14 @@
-import { MapContainer, TileLayer,Marker,Popup } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
-import "leaflet-defaulticon-compatibility";
+import React, { useState, useContext, useEffect } from 'react'
+import ReactMapGL from 'react-map-gl'
+import MapMarker from './mapMarker'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const Map = () => {
-  return (
-    <MapContainer
-      center={[64.972,-18.057]}
-      zoom={6}
-      scrollWheelZoom={false}
-      style={{ height: "100%", width: "100%" }}>
-      <Marker 
-        position={[64.972,-18.057]}
-        draggable={true}
-        animate={true}
-      >
-        <Popup>
-          Hey, this works.
-        </Popup>
-      </Marker>
-    </MapContainer>
-  )
-}
+  // const { services } = useContext(ServicesContext)
 
-export default Map
+  const [mapOptions, setMapOptions] = useState({
+    width: '100%',
+    height: '100%',
+    
+  })
+}

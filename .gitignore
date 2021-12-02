@@ -32,4 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-process.env
+next.config.js
+pages/api
+pages/api/map
