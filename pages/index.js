@@ -1,9 +1,14 @@
-
 import { motion } from 'framer-motion';
+
+const homeContent = [
+  
+]
+
 
 export default function Home() {
   return (
-    <>
+    <div>
+
       <motion.h1 initial="hidden" animate="visible" variants={{
         hidden: {
           scale: .8,
@@ -25,7 +30,7 @@ export default function Home() {
           position: 'relative',
           zIndex: 1,
           background: 'white',
-          scale: 1.2,
+          scale: 1.01,
           transition: {
             duration: .3
           }
@@ -34,7 +39,7 @@ export default function Home() {
           <h3>Title</h3>
         </motion.div>
         <motion.div key="3" className="card" whileHover={{
-          scale: 1.2,
+          scale: 1.01,
           transition: {
             duration: .3
           }
@@ -43,7 +48,7 @@ export default function Home() {
           <h3>Title</h3>
         </motion.div>
         <motion.div key="2" className="card" whileHover={{
-          scale: 1.2,
+          scale: 1.01,
           transition: {
             duration: .3
           }
@@ -53,6 +58,6 @@ export default function Home() {
         </motion.div>
       </div>
 
-    </>
+    </div>
   )
 }
