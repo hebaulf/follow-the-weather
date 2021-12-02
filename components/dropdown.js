@@ -6,46 +6,29 @@ export default function Select({ weather }) {
 
     const [id, setID] = useState();
     const [station, setStation] = useState([]); 
+    const [meteo, setMeteo] = useState({}); 
   
     const URL = `https://api.openweathermap.org/data/2.5/onecall` 
     const API_KEY = `c44f77911579d2cbc82efc379374400c`
 
-    // const getStation = async (id) => {
-    //   const res = await fetch (`${URL}?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=${API_KEY}`)
-    //   const data = await res.json();
-    //   setStation(data.results)
-    //   setID(id)
-    // }
-
-    // API to fetch the coordinates
     const getStation = async (id) => {
     const res = await fetch (`https://api.openweathermap.org/data/2.5/weather?q=${id}&appid=${API_KEY}`)
     const data = await res.json();
-    setStation(data.coord)
+    const latLon = data.coord
+    const res = await fetch (`${URL}?lat=${latLon.lat}&lon=${latLon.lon}&exclude=hourly,minutely&appid=${API_KEY}`)
+    const weatherRender = await res.json();
+    console.log(weatherRender)
+    setMeteo(weatherRender)
+    setStation(latLon)
     setID(id)
   }
 
-
-  // API to display the weather 
-  // const getWeather = async () => {
-  //   const res = await fetch (`${URL}?lat=${station.lat}&lon=${station.lon}&exclude=hourly,minutely&appid=${API_KEY}`)
-  //   const weather = await res.json();
-
-  //     return {
-  //     props: {
-  //     weather
-  //     }
-  // }
-  // }
-    
   return (
  
     <>
-
-      <head> 
+      <head>
         <title>Select_vanilla</title>
       </head> 
-
       <div>
           <form>
               <select onChange={(e)=>getStation(e.target.value)}>
@@ -56,17 +39,13 @@ export default function Select({ weather }) {
               ))}
               </select>
           </form>
-          <h3>You have selected {station.lat}</h3>
+          <h3>You have selected {station.lat} and {station.lon}</h3>
       </div>
     
       <div>
-        
-        {weather}
-
+        <h3>Render the Weather! 🎵</h3>
+        <h2>Clouds: </h2> {meteo.current?.clouds}
       </div>   
-
-        
     </>
   )
 }
-
