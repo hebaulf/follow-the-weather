@@ -7,6 +7,8 @@ export default function WeatherElements() {
             <Link href="/">Home</Link><br/>
             <Link href="/weather-now">Weather Today</Link><br/>
             <Link href="/weather-months">Weather by Months</Link>
+
+            
         </div>
     )
 }
