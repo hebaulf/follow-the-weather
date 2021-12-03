@@ -1,14 +1,16 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import ReactMapGL from 'react-map-gl'
-import MapMarker from './mapMarker'
 import 'mapbox-gl/dist/mapbox-gl.css'
+
+const MAPBOX_TOKEN = 'pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA';
 
 const Map = () => {
   // const { services } = useContext(ServicesContext)
-
-  const [mapOptions, setMapOptions] = useState({
-    width: '100%',
-    height: '100%',
-    
-  })
+  return (
+    <>
+      Map
+    </>
+  )
 }
+
+export default Map;

@@ -1,9 +1,10 @@
 import React from 'react'
+import styled from './layout.module.scss'
 
-const mainView = ({ children }) => (
-  <div className={styled.mainView}>
+const MainView = ({ children }) => (
+  <main className={styled.main}>
     {children}
-  </div>
+  </main>
 );
 
-export default mainView;
+export default MainView;

@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from '../layout.module.scss'
+import MainView from '../mainView';
+import SidePanel from '../sidePanel';
 
-
-const PageWrapper = ({ children }) => (
+const PageWrapper = () => (
   <main className={styled.wrapper}>
-    {children}
+    <MainView />
+    <SidePanel />
+    hello
   </main>
 ); 
 
