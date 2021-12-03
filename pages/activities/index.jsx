@@ -9,7 +9,7 @@ const Activities = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const r = await fetch(`/api/activities/${slug[1]}/${slug[0]}`);
+      const r = await fetch(`/api/activities/${slug[0]}/${slug[1]}`);
       const data = await r.json();
       console.log('this is a json');
       setActivities(data.data.ServiceProviders.ServiceProviders)
@@ -24,12 +24,6 @@ const Activities = () => {
   return (
     <>
       <div>
-        {activities.map((activity) => (
-          <div key={activity.id}>
-            <h2>{activity.legalName}</h2>
-          </div>
-        ))}
-        <h1>hello</h1>
       </div>
     </>
   )
