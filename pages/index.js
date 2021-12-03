@@ -1,25 +1,13 @@
-import { useEffect, useState } from 'react'
-import Head from 'next/head'
-import { motion } from 'framer-motion';
-import PageWrapper from '../components/Layout/pageWrapper/pageWrapper';
-import Map from '../components/map/map';
-import 'mapbox-gl/dist/mapbox-gl.css';
-
+import Link from 'next/link'
 
 const Home = () => {
   // const [weather, setWeather] = useState([])
   return (
-    <>
-      <PageWrapper>
-        <Head>
-          <title>Follow the Weather</title>
-        </Head>
-        <section>
-          <Map/>
-        </section>
-        
-      </PageWrapper>
-    </>
+    <div>
+      <h1>This is the Landing page</h1>
+      <Link href="/weather-now">Weather Today</Link><br/>
+      <Link href="/weather-months">Weather by Month</Link>
+    </div>
   )
 }
 
