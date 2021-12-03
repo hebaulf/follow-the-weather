@@ -1,3 +1,6 @@
 h1.red {
   color: green;
 }
+
+@import './variables/colors.module.scss';
+@import './variables/typography.module.scss';

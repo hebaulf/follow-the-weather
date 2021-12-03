@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import Dropdown from '../../components/dropdown';
 
+
+
 export default function WeatherNow() {
     
     return (
@@ -10,8 +12,7 @@ export default function WeatherNow() {
             <Link href="/">Home</Link><br/>
             <Link href="/weather-elements">Weather Elements</Link><br/>
             <Link href="/weather-months">Weather by Month</Link>
-            <br/><br/><br/>
-
+            <br /><br /><br />
             <Dropdown />
         </div>
     )
