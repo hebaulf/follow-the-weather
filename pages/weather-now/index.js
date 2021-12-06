@@ -1,41 +1,38 @@
-import React from 'react';
-import Link from 'next/link';
-import Dropdown from '../../components/dropdown';
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import Image from 'next/image'
 import Grid from '../../components/Layout/Grid/grid';
-
-import Sidebar from '../../components/Layout/Sidebar/sidebar';
 import Content from '../../components/Layout/Content/content';
+import Sidebar from '../../components/Layout/Sidebar/sidebar';
 import Map from '../../components/Map/map';
 
-
-let categories = {
-  'museums': "5ec7d096a90548233654d4aa",
-  'horse-riding': "5ec7d096a90548233654d48e",
-  'geothermal-baths': "5ec7d096a90548233654d493",
-  'diving': "5ec7d096a90548233654d480",
-  'culinary-experience': "5ec7d096a90548233654d4a0",
-  'hiking': "5ec7d096a90548233654d47d",
-  'whale-wathching': "5ec7d096a90548233654d4a6",
-  'skiing': "5ec7d096a90548233654d483",
-  'cave-exploring': "5ec7d096a90548233654d493",
-  'glacier-tours': "5ec7d096a90548233654d4a9",
-  'kayaking': "5ec7d096a90548233654d4a5",
+const WeatherNow = () => {
+ 
+  return (
+    <Grid>
+      <Content>
+          <Map/>
+      </Content>
+     
+			<Sidebar>
+				Weather Info
+      </Sidebar>
+      
+    </Grid>
+  )
 }
 
-export default function WeatherNow() {
+
+export default WeatherNow;
 
 
-    return (
-			<Grid>
-				<Content>
-					<div>
-
-					</div>
-				</Content>
-				<Sidebar>
-					Here comes the sidebar
-				</Sidebar>
-			</Grid>
-    )
-}
-
+/* <div>
+        {activities.map((activity) => (
+          <div key={activity.id}>
+            <h2>{activity.translations[0].name}</h2>
+            <p>{activity.location.coordinates[0]},{' '}{activity.location.coordinates[1]}</p>
+            <p>{activity.website}</p>
+          </div>
+        ))}
+       
+      </div> */
