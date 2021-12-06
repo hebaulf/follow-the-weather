@@ -13,26 +13,11 @@ const WeatherNow = () => {
       <Content>
           <Map/>
       </Content>
-     
 			<Sidebar>
 				Weather Info
       </Sidebar>
-      
     </Grid>
   )
 }
 
-
 export default WeatherNow;
-
-
-/* <div>
-        {activities.map((activity) => (
-          <div key={activity.id}>
-            <h2>{activity.translations[0].name}</h2>
-            <p>{activity.location.coordinates[0]},{' '}{activity.location.coordinates[1]}</p>
-            <p>{activity.website}</p>
-          </div>
-        ))}
-       
-      </div> */
