@@ -16,8 +16,8 @@ export const DropdownMenuDemo = () => {
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${id}&appid=${API_KEY}`)
     const data = await res.json();
     const latLon = data.coord
-    const res = await fetch(`${URL}?lat=${latLon.lat}&lon=${latLon.lon}&exclude=hourly,minutely&appid=${API_KEY}`)
-    const weatherRender = await res.json();
+    const res2 = await fetch(`${URL}?lat=${latLon.lat}&lon=${latLon.lon}&exclude=hourly,minutely&appid=${API_KEY}`)
+    const weatherRender = await res2.json();
     console.log(weatherRender)
     setMeteo(weatherRender)
     setStation(latLon)
