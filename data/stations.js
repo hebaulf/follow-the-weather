@@ -1,14 +1,16 @@
 export const stations = [
     {
-        name: "Reykjavik",
-        region: "Capital Region"
+        name: "Reykjavík",
+        region: "Capital Region",
+
+
     },
     {
-        name: "Keflavik",
+        name: "Keflavík",
         region: "Southern Peninsula"
     },
     {
-        name: "Hvolsvollur",
+        name: "Hvolsvöllur",
         region: "Southern Region"
     },
     {
@@ -16,35 +18,35 @@ export const stations = [
         region: "Southern Region"
     },
     {
-        name: "Vik",
+        name: "Vík",
         region: "Southern Region"
     },
     {
-        name: "Hofn",
+        name: "Höfn",
         region: "Southern Region"
     },
     {
-        name: "Reydarfjordur",
+        name: "Reyðarfjördðr",
         region: "Eastern Region"
     },
     {
-        name: "Neskaupstadur",
+        name: "Neskaupstaður",
         region: "Eastern Region"
     },
     {
-        name: "Egilsstadir",
+        name: "Egilsstaðir",
         region: "Eastern Region"
     },
     {
-        name: "Vopnafjordur",
+        name: "Vopnafjörður",
         region: "Eastern Region"
     },
     {
-        name: "Raufarhofn",
+        name: "Raufarhöfn",
         region: "Northeastern Region"
     },
     {
-        name: "Husavik",
+        name: "Húsavík",
         region: "Northeastern Region"
     },
     {
@@ -52,27 +54,27 @@ export const stations = [
         region: "Northeastern Region"
     },
     {
-        name: "Dalvik",
+        name: "Dalvík",
         region: "Northeastern Region"
     },
     {
-        name: "Siglufjordur",
+        name: "Siglufjörður",
         region: "Northeastern Region"
     },
     {
-        name: "Saudarkrokur",
+        name: "Sauðárkrokur",
         region: "Northwestern Region"
     },
     {
-        name: "Isafjordur",
+        name: "Ísafjörður",
         region: "Westfjords"
     },
     {
-        name: "Stykkisholmur",
+        name: "Stykkishólmur",
         region: "Western Region"
     },
     {
-        name: "Olafsvik",
+        name: "Ólafsvík",
         region: "Western Region"
     },
     {

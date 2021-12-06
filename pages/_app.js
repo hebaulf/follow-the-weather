@@ -1,5 +1,6 @@
 import { IdProvider } from '@radix-ui/react-id';
 import { motion } from 'framer-motion';
+import Layout from '../components/Layout';
 import '../styles/globals.scss';
 
 function App({ Component, pageProps, router }) {
@@ -14,7 +15,9 @@ function App({ Component, pageProps, router }) {
           opacity: 1
         }
       }}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </motion.div>
     </IdProvider>
   )
