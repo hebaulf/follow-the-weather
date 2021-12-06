@@ -5,6 +5,7 @@ import Grid from '../../../components/Layout/Grid/grid';
 import Content from '../../../components/Layout/Content/content';
 import Sidebar from '../../../components/Layout/Sidebar/sidebar';
 import Map from '../../../components/Map/map';
+import ActivityCard from '../../../components/ThingsToDo/ServiceListByCategory/ActivityCard/activityCard';
 
 const Activities = () => {
   const [activities, setActivities] = useState([])
@@ -28,17 +29,14 @@ const Activities = () => {
   return (
     <Grid>
       <Content>
-        <Map/>
+          <Map/>
       </Content>
+     
       <Sidebar>
         <h2>{slug}</h2>
-        {activities.map(activity => (
-          <div key={activity.id}>
-            <h3>{activity.translations[0].name}</h3>
-            <p>{activity.website}</p>
-          </div>
-        ))}
-      </Sidebar>  
+        <ActivityCard activities={activities} />
+      </Sidebar>
+      
     </Grid>
   )
 }

@@ -1,7 +1,6 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
-import TodoMarker from './todoMarker'
 import Image from 'next/image'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import style from './map.module.scss'
