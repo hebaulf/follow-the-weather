@@ -26,7 +26,7 @@ let categories = {
 
 const body = {
   operationName: null,
-  variables: { take: 150, skip: 0, categoryIds: [] },
+  variables: { take: 10, skip: 0, categoryIds: [] },
   query: `
   query(
     $categoryIds: [String!]

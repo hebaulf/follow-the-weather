@@ -1,7 +1,27 @@
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import style from './activityCard.module.scss'
 import Image from 'next/image'
 
-const ActivityCard = ({activities}) => {
+const ActivityCard = () => {
+  
+  const [activities, setActivities] = useState([])
+  const router = useRouter()
+  const { slug } = router.query || ['swimming']
+  console.log({ slug })
+
+  useEffect(() => {
+    const getData = async () => {
+      const r = await fetch(`/api/weather-now/thingstodo/${slug}`);
+      const data = await r.json();
+      console.log('this is a json');
+      setActivities(data.data.ServiceProviders.ServiceProviders)
+    }
+
+    slug && getData();
+    console.log('this got the data')
+  }, [slug])
+
   return (
   <>
     {activities.map(activity => (

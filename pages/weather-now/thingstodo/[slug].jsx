@@ -8,24 +8,7 @@ import Map from '../../../components/Map/map';
 import ActivityCard from '../../../components/ThingsToDo/ServiceListByCategory/ActivityCard/activityCard';
 
 const Activities = () => {
-  const [activities, setActivities] = useState([])
-  const router = useRouter()
-  const { slug } = router.query || ['swimming']
-  console.log({ slug })
-
-  useEffect(() => {
-    const getData = async () => {
-      const r = await fetch(`/api/weather-now/thingstodo/${slug}`);
-      const data = await r.json();
-      console.log('this is a json');
-      setActivities(data.data.ServiceProviders.ServiceProviders)
-    }
-
-    slug && getData();
-    console.log('this got the data')
-  }, [slug])
-
-
+ 
   return (
     <Grid>
       <Content>
@@ -33,8 +16,7 @@ const Activities = () => {
       </Content>
      
       <Sidebar>
-        <h2>{slug}</h2>
-        <ActivityCard activities={activities} />
+        <ActivityCard />
       </Sidebar>
       
     </Grid>
