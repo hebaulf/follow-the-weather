@@ -35,3 +35,5 @@ yarn-error.log*
 next.config.js
 pages/api
 pages/api/map
+components/Cursor
+process.env

@@ -1,15 +1,17 @@
-import { NextSeo } from 'next-seo';
 import PageTransition from './page-transition';
 import SmoothScroll from './smooth-scroll';
+import SiteContainer from '../components/SiteContainer/siteContainer';
+import Header from '../components/Header/header';
+import Main from '../components/Layout/Main/main';
 
-
-const Page = ({ children, seo }) => {
+const Page = ({ children }) => {
   return (
-    <>
-      <NextSeo {...seo} />
-      <PageTransition />
-      <SmoothScroll>{children}</SmoothScroll>
-    </>
+    <SiteContainer>
+      <Header />
+      <Main>
+       {children}
+      </Main>
+    </SiteContainer>
   )
 };
 

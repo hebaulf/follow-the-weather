@@ -1,14 +1,27 @@
 
 let regions = {
+  capital: "5ec7d096a90548233654dbb2",
   west: "5ec7d096a90548233654dbaf",
   east: "5ec7d096a90548233654dbb0",
-  south: "5ec7d096a90548233654dbb5"
+  south: "5ec7d096a90548233654dbb5",
+  north: "5ec7d096a90548233654dbb3",
+  reykjanes: "5ec7d096a90548233654dbb4",
+  westfjords: "5ec7d096a90548233654dbb6"
 }
+
 let categories = {
-  swimming: "5ec7d096a90548233654d47c",
-  winterSports: "5ec7d096a90548233654d47e",
-  diving: "5ec7d096a90548233654d480",
-  hiking: "5ec7d096a90548233654d47d",
+  'swimming': "5ec7d096a90548233654d47c",
+   'museums': "5ec7d096a90548233654d4aa",
+  'horse-riding': "5ec7d096a90548233654d48e",
+  'geothermal-baths': "5ec7d096a90548233654d493",
+  'diving': "5ec7d096a90548233654d480",
+  'culinary-experience': "5ec7d096a90548233654d4a0",
+  'hiking': "5ec7d096a90548233654d47d",
+  'whale-wathching': "5ec7d096a90548233654d4a6",
+  'skiing': "5ec7d096a90548233654d483",
+  'cave-exploring': "5ec7d096a90548233654d493",
+  'glacier-tours': "5ec7d096a90548233654d4a9",
+  'kayaking': "5ec7d096a90548233654d4a5",
 }
 
 const body = {
@@ -32,13 +45,7 @@ const body = {
         legalName
         id: serviceProviderId
         SSN
-        address
-        zipCode
-        phoneNr
-        email
         website
-        facebook
-        instagram
         photos {
           alt
           src: photoUri
@@ -47,7 +54,7 @@ const body = {
           description
           name
           locale
-          name
+       
         }
         location {
           coordinates
@@ -58,7 +65,7 @@ const body = {
 `
 }
 
-const getData = async (category, region) => {
+const getData = async (region, category) => {
   body.variables.regionIds[0] = regions[region]
   body.variables.categoryIds[0] = categories[category]
 
@@ -94,7 +101,7 @@ export default async function handler(req, res) {
   const {
     query: { slug } 
   } = req
-  const json = await getData(slug[1], slug[0])
+  const json = await getData(slug[0], slug[1])
   res.status(200).json(json)
 }
 

@@ -1,0 +1,7 @@
+.grid {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 9fr 3fr;
+  grid-template-areas: 'content sidebar';
+}
