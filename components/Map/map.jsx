@@ -29,6 +29,11 @@ const Map = () => {
     slug && getData();
   }, [slug])
 
+  useEffect(() => {
+    const weatherData = async () => {
+
+    }
+  })
 
   // Set coordinates to points to work with mapbox
   const points = activities.map(activity => ({
@@ -94,6 +99,7 @@ const Map = () => {
           <div className={style.icon} style={{ ...pinStyle }}/>
        </Marker>
       ))}
+      
  
     </ReactMapGL>
   )

@@ -5,8 +5,11 @@ import Grid from '../../components/Layout/Grid/grid';
 import Content from '../../components/Layout/Content/content';
 import Sidebar from '../../components/Layout/Sidebar/sidebar';
 import Map from '../../components/Map/map';
+import DropdownMenuDemo from '../../components/Dropdown/dropdown_radix';
+
 
 const WeatherNow = () => {
+	const [settings, setSettings] = useState({});
  
   return (
     <Grid>
@@ -14,7 +17,7 @@ const WeatherNow = () => {
           <Map/>
       </Content>
 			<Sidebar>
-				Weather Info
+				<DropdownMenuDemo />
       </Sidebar>
     </Grid>
   )

@@ -11,13 +11,13 @@ let regions = {
 
 let categories = {
   'swimming': "5ec7d096a90548233654d47c",
-   'museums': "5ec7d096a90548233654d4aa",
+  'museums': "5ec7d096a90548233654d4aa",
   'horse-riding': "5ec7d096a90548233654d48e",
   'geothermal-baths': "5ec7d096a90548233654d493",
   'diving': "5ec7d096a90548233654d480",
   'culinary-experience': "5ec7d096a90548233654d4a0",
   'hiking': "5ec7d096a90548233654d47d",
-  'whale-wathching': "5ec7d096a90548233654d4a6",
+  'whale-watching': "5ec7d096a90548233654d4a6",
   'skiing': "5ec7d096a90548233654d483",
   'cave-exploring': "5ec7d096a90548233654d493",
   'glacier-tours': "5ec7d096a90548233654d4a9",
