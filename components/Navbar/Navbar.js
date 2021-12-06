@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from './Navbar.module.scss';
 import { useState } from 'react';
 import { useRouter } from "next/router";
 
@@ -7,21 +8,21 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="header">
-            <div className="logo">
+        <div className={styles.header}>
+            <div className={styles.logo}>
                 <Link href="/">Follow the Weather</Link>
             </div>
-            <nav className="navigation">
+            <nav className={styles.navigation}>
                 <div 
-                    className={`hamburger ${open ? "active" : ""}`} 
+                    className={`${styles.hamburger} ${open ? "active" : ""}`}
                     onClick={() => setOpen(!open)} >
-                    <span>---</span>
-                    <span>---</span>
-                    <span>---</span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
 
                 {open && 
-                    <ul>
+                    <ul className={styles.menu}>
                         <li className={router.pathname == "/" ? "active" : ""}><Link href="/">Home</Link></li>
                         <li className={router.pathname == "/weather-elements" ? "active" : ""}><Link href="/weather-elements">Weather Elements</Link></li>
                         <li className={router.pathname == "/weather-now" ? "active" : ""}><Link href="/weather-now">Weather Today</Link></li>

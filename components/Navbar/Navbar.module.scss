@@ -5,12 +5,51 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   height: 4rem;
   width: 100%;
+  padding: 0 24px;
 
   .hamburger {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    width: 40px;
+    padding: 8px;
+    cursor: pointer;
+
     span {
       content: "";
+      display: flex;
+      background-color: $font-color-yellow;
+      height: 4px;
+      width: 100%;
+
+      &:nth-child(1) {
+        background-color: $secondary-300;
+      }
+      &:nth-child(2) {
+        background-color: $secondary-400;
+      }
+      &:nth-child(3) {
+        background-color: $secondary-500;
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    right: 24px;
+    width: auto;
+    padding: 10px;
+    border: 1px solid red;
+
+    li {
+      list-style-type: none;
+      padding: 5px;
     }
   }
 }
