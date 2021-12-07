@@ -6,29 +6,34 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import style from './mapbox.module.scss'
 
-const MapBox = ({ isMapbox, setIsMapbox, location, getWeather }) => {
-  // is location clicked, then zoom
+const Mapbox = ({ isMapbox, setIsMapbox, location, getWeather }) => {
   const [clicked, setClicked] = useState(null);
-  
-  // set the viewport state
-  // if clicked the lon/lat location changes in viewport
-  // if clicked then zoomed to that lon/lat
+
+  const [closePopup, setClosedPopup] = useState(true);
+
+  const [showPopup, togglePopup] = useState(false);
+
   const [viewport, setViewport] = useState({
-    width: '100%',
-    height: '100%',
-    latitude: location.latitude || (clicked && clicked.lngLat && clicked.lngLat[1]),
-    longitude: location.longitude || (clicked && clicked.lngLat && clicked.lngLat[0]),
+    width: "100%",
+    height: "100%",
+    latitude:
+      location.latitude || (clicked && clicked.lngLat && clicked.lngLat[1]),
+    longitude:
+      location.longitude || (clicked && clicked.lngLat && clicked.lngLat[0]),
     zoom: clicked ? clicked.zoom : 10,
   });
 
   useEffect(() => {
     setViewport({
-      width: '100%',
-      height: '100%',
-      latitude: clicked && clicked.lngLat ? clicked.lngLat[1] : location.latitude,
-      longitude: clicked && clicked.lngLat ? clicked.lngLat[0] : location.longitude,
-    })
-  }, [clicked, isMapbox, location.latitude, location.longitude]); // is this needed ? useReducer?
+      width: "100%",
+      height: "100%",
+      latitude:
+        clicked && clicked.lngLat ? clicked.lngLat[1] : location.latitude,
+      longitude:
+        clicked && clicked.lngLat ? clicked.lngLat[0] : location.longitude,
+      zoom: clicked ? clicked.zoom : 10,
+    });
+  }, [clicked, isMapbox, location.latitude, location.longitude]);
 
   const marker = useMemo(
     () => (
@@ -42,33 +47,73 @@ const MapBox = ({ isMapbox, setIsMapbox, location, getWeather }) => {
       >
         <FontAwesomeIcon
           icon={faMapMarkerAlt}
-          width={viewport.zoom * 4}
-          height={viewport.zoom * 4}
-          color={'#ccaf09'}
+          width={viewport.zoom * 5}
+          height={viewport.zoom * 5}
+          color={"#f53357"}
         />
       </Marker>
-    ), [clicked, location.latitude, location.longitude, viewport.zoom]
+    ),
+    [clicked, location.latitude, location.longitude, viewport.zoom]
   );
 
   return (
-    <div className={style.modal} style={{ transform: isMapbox ? "translateY(0)" : "translateY(-60rem)" }}>
+    <div
+      style={{ transform: isMapbox ? "translateY(0)" : "translateY(-80rem)" }}
+    >
+      <div>
+        <button onClick={() => setIsMapbox(false)}>Close</button>
+      </div>
       <ReactMapGl
         {...viewport}
-        mapStyle="mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
-        mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
         onViewportChange={(nextViewport) => {
           setViewport(nextViewport);
           setClicked({ ...clicked, zoom: nextViewport.zoom });
         }}
+        mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
+        mapStyle="mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
         onClick={(e) => {
-          
+          !showPopup && setClicked({ ...clicked, lngLat: e.lngLat });
+          togglePopup(!showPopup);
         }}
       >
-      {marker}
+        {marker}
+        {showPopup && (
+          <Popup
+            latitude={clicked && clicked.lngLat && clicked.lngLat[1]}
+            longitude={clicked && clicked.lngLat && clicked.lngLat[0]}
+            closeButton={false}
+            closeOnClick={closePopup ? true : false}
+            onClose={() => togglePopup(false)}
+          >
+         
+              <div>
+                <button
+                  onFocus={() => setClosedPopup(false)}
+                  onBlur={() => setClosedPopup(true)}
+                  onClick={() => setTimeout(() => togglePopup(false), 333)}
+                >
+                  No
+                </button>
+                <button
+                  onFocus={() => setClosedPopup(false)}
+                  onBlur={() => setClosedPopup(true)}
+                  onClick={() => {
+                    setTimeout(() => togglePopup(false), 333);
+                    setIsMapbox(false);
+                    getWeather(
+                      [clicked.lngLat[1], clicked.lngLat[0]],
+                      "coords"
+                    );
+                  }}
+                >
+                  Yes
+                </button>
+              </div>
+          </Popup>
+        )}
       </ReactMapGl>
-    
     </div>
-  )
-}
+  );
+};
 
-export default MapBox;
+export default Mapbox;

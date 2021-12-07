@@ -1,5 +1,6 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import * as ActivityState from '../../state/activityState'
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import Image from 'next/image'
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -10,41 +11,41 @@ const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,
   c0,0,0.1,0.1,0.1,0.2c0.2,0.3,0.4,0.6,0.7,0.9c2.6,3.1,7.4,7.6,7.4,7.6s4.8-4.5,7.4-7.5c0.2-0.3,0.5-0.6,0.7-0.9
   C20.1,15.8,20.2,15.8,20.2,15.7z`;
 
-
+ 
 
 const Map = () => {
+  const mapRef = useRef(null);
+  const activityState = ActivityState.useGlobalState()
+
+  const activities = activityState.getActivitiesSelectedCategory();
+  const selectedCategory = activityState.getSelectedCategory();
   // ACTIVITIES
-  const [activities, setActivities] = useState([])
+  //const [activities, setActivities] = useState([])
   const router = useRouter()
   const { slug } = router.query || ['swimming']
   console.log({ slug })
 
   useEffect(() => {
     const getData = async () => {
-      const r = await fetch(`/api/weather-now/thingstodo/${slug}`);
+      const r = await fetch(`/api/weather-now/thingstodo/${selectedCategory}`);
       const data = await r.json();
-      setActivities(data.data.ServiceProviders.ServiceProviders)
+      activityState.setActivities(data.data.ServiceProviders.ServiceProviders, selectedCategory)
+      //setActivities(data.data.ServiceProviders.ServiceProviders)
     }
 
-    slug && getData();
-  }, [slug])
+    selectedCategory && getData();
+  }, [activityState, selectedCategory])
 
-  useEffect(() => {
-    const weatherData = async () => {
-
-    }
-  })
+  console.log('activities', activities)
 
   // Set coordinates to points to work with mapbox
   const points = activities.map(activity => ({
     type: "Feature",
     properties: {
       id: activity.id,
-      category: { slug },
       name: activity.translations[0].name,
       description: activity.translations[0].description,
       website: activity.website,
-      marked: { slug },
       latitude: parseFloat(activity.location.coordinates[1]),
       longitude: parseFloat(activity.location.coordinates[0])
     },
@@ -75,8 +76,6 @@ const Map = () => {
   
   
   const pinSize = (`${viewport.zoom}` * 1.5) ;
-
-
   const pinStyle = {
     border: 'none',
     stroke: 'none',
@@ -88,19 +87,25 @@ const Map = () => {
   return (
     <ReactMapGL 
       {...viewport}
+      ref={mapRef}
       maxZoom={20}
       minZoom={4}
       mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
       mapStyle="mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
+      onInteractionStateChange={(extra) => {
+        if (!extra.isDragging && mapRef.current) {
+          const bounds = mapRef.current.getMap().getBounds();
+          console.log(bounds)
+          ActivityState.accessGlobalState().setBoundaries(bounds);
+        }
+      }}
     >
       {points.map(point => (
         <Marker offsetLeft={`${-pinSize}`/2} offsetTop={`${-pinSize}`/2} key={point.id} longitude={parseFloat(point.geometry.coordinates[1])} latitude={parseFloat(point.geometry.coordinates[0])} >
-          <div className={style.icon} style={{ ...pinStyle }}/>
+          <button className={style.icon} style={{ ...pinStyle }}/>
        </Marker>
       ))}
-      
- 
     </ReactMapGL>
   )
 }
