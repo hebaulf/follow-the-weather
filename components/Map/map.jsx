@@ -29,6 +29,11 @@ const Map = () => {
     slug && getData();
   }, [slug])
 
+  useEffect(() => {
+    const weatherData = async () => {
+
+    }
+  })
 
   // Set coordinates to points to work with mapbox
   const points = activities.map(activity => ({
@@ -59,9 +64,8 @@ const Map = () => {
     width: '100%',
     height: '100%',
     zoom: 6,
-    longitude: -18.8,
-    latitude: 61.5,
-    center: [61.5, -18.8]
+    longitude: -18.5,
+    latitude: 65,
   });
 
   const bounds = [

@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <>
-      <Map/>
+     <h1>Follow the Weather</h1>
     
     </>
   )

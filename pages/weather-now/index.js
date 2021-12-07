@@ -8,19 +8,25 @@ import Map from '../../components/Map/map';
 import DropdownMenuDemo from '../../components/Dropdown/dropdown_radix';
 
 
-const WeatherNow = () => {
-	const [settings, setSettings] = useState({});
+const WeatherNow = ({swim}) => {
+	
  
   return (
     <Grid>
       <Content>
-          <Map/>
+        <Map activities={swim} />
+        
       </Content>
 			<Sidebar>
-				<DropdownMenuDemo />
+        <DropdownMenuDemo />
+  
+        <button>hello</button>
       </Sidebar>
     </Grid>
   )
 }
 
+
+
 export default WeatherNow;
+

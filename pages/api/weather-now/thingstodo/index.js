@@ -11,13 +11,13 @@ let regions = {
 
 let categories = {
   'swimming': "5ec7d096a90548233654d47c",
-   'museums': "5ec7d096a90548233654d4aa",
+  'museums': "5ec7d096a90548233654d4aa",
   'horse-riding': "5ec7d096a90548233654d48e",
   'geothermal-baths': "5ec7d096a90548233654d493",
   'diving': "5ec7d096a90548233654d480",
   'culinary-experience': "5ec7d096a90548233654d4a0",
   'hiking': "5ec7d096a90548233654d47d",
-  'whale-wathching': "5ec7d096a90548233654d4a6",
+  'whale-watching': "5ec7d096a90548233654d4a6",
   'skiing': "5ec7d096a90548233654d483",
   'cave-exploring': "5ec7d096a90548233654d493",
   'glacier-tours': "5ec7d096a90548233654d4a9",
@@ -26,15 +26,13 @@ let categories = {
 
 const body = {
   operationName: null,
-  variables: { take: 50, skip: 0, categoryIds: [] },
+  variables: { take: 100, skip: 0 },
   query: `
   query(
-    $categoryIds: [String!]
     $take: Int
     $skip: Int
   ) {
     ServiceProviders(
-      filter: { categoryIds: $categoryIds }
       take: $take
       skip: $skip
       sort: { isApprovedTourismService: ASC }
@@ -63,9 +61,8 @@ const body = {
 `
 }
 
-const getData = async (category) => {
+const getData = async () => {
   //body.variables.regionIds[0] = regions[region]
-  body.variables.categoryIds[0] = categories[category]
 
 
 const r = await fetch("https://www.visiticeland.com/.netlify/functions/request-proxy", {
@@ -91,20 +88,15 @@ const r = await fetch("https://www.visiticeland.com/.netlify/functions/request-p
 });
   
 const json = await r.json();
-  console.log(JSON.stringify(json));
+ console.log(JSON.stringify(json));
   return json
 }
 getData();
 
-
 export default async function handler(req, res) {
-  const {
-    query: { slug } 
-  } = req
-  const json = await getData(slug)
+  const data = req
+  const json = await getData(data)
   res.status(200).json(json)
-
- 
 }
 
 
