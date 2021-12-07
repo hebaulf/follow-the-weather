@@ -1,27 +1,86 @@
+@import "../../styles/variables/colors.scss";
+@import "../../styles/variables/typography";
+@import "../../styles/variables/mixins";
+
 .header {
-  grid-area: header;
-  background-color: black;
-  color: white;
-  width: 100%;
+  position: fixed;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
-  padding: 2rem;
-  border-bottom: 1px solid white;
+  align-items: center;
+  top: 0;
+  height: 6rem;
+  width: 100%;
+  padding: 0 24px;
+  z-index: 100;
 
-  a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    letter-spacing: 0.02em;
-    font-weight: bold;
+  @media (min-width: 764px) {
+    height: 8rem;
   }
-  .nav {
-    display: flex;
-    gap: 2rem;
 
-    a {
-      font-size: 16px;
-      font-weight: normal;
+  .hamburger {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    width: 40px;
+    padding: 8px;
+    cursor: pointer;
+
+    span {
+      content: "";
+      display: flex;
+      background-color: $font-color-yellow;
+      height: 4px;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+
+      &:nth-child(1) {
+        background-color: $secondary-300;
+        transition: transform 0.3s ease-in-out;
+      }
+      &:nth-child(2) {
+        background-color: $secondary-400;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+      }
+      &:nth-child(3) {
+        background-color: $secondary-500;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    &.active {
+      span {
+        height: 3px;
+
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(4px, 8px);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(4px, -8px);
+        }
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    right: 24px;
+    width: auto;
+    padding: 10px;
+    background-color: $background-color-lighter;
+    overflow: hidden;
+
+    li {
+      list-style-type: none;
+      padding: 5px;
     }
   }
 }

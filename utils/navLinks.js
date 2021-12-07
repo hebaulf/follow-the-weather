@@ -5,15 +5,18 @@ export const homeLink = {
 
 export const navLinks = [
   {
-    name: "Weather Elements",
-    path: "/weather-elements"
-  },
-  {
-    name: "Weather Now",
+    name: "Weather today",
+    text: "Find activities based on the current weather",
     path: "/weather-now"
   },
   {
-    name: "Weather by Month",
-    path: "/weather-month"
+    name: "Weather by month",
+    text: "Discover activities based on the seasonal weather",
+    path: "/weather-months"
+  },
+  {
+    name: "Weather culture",
+    text: "Learn about the icelandic weather culture",
+    path: "/weather-elements"
   },
 ]

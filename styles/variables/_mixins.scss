@@ -1,0 +1,117 @@
+@use "sass:math";
+@import "./typography";
+
+/**** TYPOGRAPHY MIXINS ****/
+@mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
+  $factor: math.div(1, ($max-vw - $min-vw)) * ($max-value - $min-value);
+  $calc-value: unquote(
+    "#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }"
+  );
+
+  font-size: $min-value; // Fallback for older browsers
+  font-size: clamp(
+    #{if($min-value > $max-value, $max-value, $min-value)},
+    #{$calc-value},
+    #{if($min-value > $max-value, $min-value, $max-value)}
+  );
+}
+
+@mixin display-lg {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-display-lg--min,
+    $font-size-display-lg--max
+  );
+  font-weight: 600;
+}
+
+@mixin heading-1 {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-h1--min,
+    $font-size-h1--max
+  );
+  font-weight: 400;
+}
+
+@mixin heading-2 {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-h2--min,
+    $font-size-h2--max
+  );
+  font-weight: 400;
+}
+
+@mixin heading-3 {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-h3--min,
+    $font-size-h3--max
+  );
+  font-weight: 400;
+}
+
+@mixin heading-4 {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-h4--min,
+    $font-size-h4--max
+  );
+  font-weight: 300;
+}
+
+@mixin text-base {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-p--min,
+    $font-size-p--max
+  );
+  font-weight: 300;
+}
+
+@mixin text-display {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-p-sm--min,
+    $font-size-p-sm--max
+  );
+  font-weight: 300;
+}
+
+@mixin text-pretitle {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-p-sm--min,
+    $font-size-p-sm--max
+  );
+  font-weight: 300;
+}
+
+@mixin text-lg {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-p-sm--min,
+    $font-size-p-sm--max
+  );
+  font-weight: 300;
+}
+
+@mixin text-sm {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-p-sm--min,
+    $font-size-p-sm--max
+  );
+  font-weight: 300;
+}
