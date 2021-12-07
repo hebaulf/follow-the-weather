@@ -1,14 +1,18 @@
-@import "../../styles/variables/colors.module.scss";
+@import "../../styles/variables/colors.scss";
+@import "../../styles/variables/typography";
 
 .header {
+  position: sticky;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  top: 0;
   height: 4rem;
   width: 100%;
   padding: 0 24px;
+  z-index: 100;
 
   .hamburger {
     position: relative;
@@ -27,15 +31,36 @@
       background-color: $font-color-yellow;
       height: 4px;
       width: 100%;
+      transition: all 0.3s ease-in-out;
 
       &:nth-child(1) {
         background-color: $secondary-300;
+        transition: transform 0.3s ease-in-out;
       }
       &:nth-child(2) {
         background-color: $secondary-400;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
       }
       &:nth-child(3) {
         background-color: $secondary-500;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    &.active {
+      span {
+        height: 3px;
+
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(4px, 8px);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(4px, -8px);
+        }
       }
     }
   }
@@ -45,7 +70,8 @@
     right: 24px;
     width: auto;
     padding: 10px;
-    border: 1px solid red;
+    background-color: $background-color-lighter;
+    overflow: hidden;
 
     li {
       list-style-type: none;

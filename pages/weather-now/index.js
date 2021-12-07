@@ -1,12 +1,27 @@
-import React from 'react';
-import Dropdown from '../../components/Dropdown/Dropdown';
+import { useState, useEffect } from 'react'
+// import { useRouter } from 'next/router'
+// import Image from 'next/image'
+import Grid from '../../components/Layout/Grid/grid';
+import Content from '../../components/Layout/Content/content';
+import Sidebar from '../../components/Layout/Sidebar/sidebar';
+import Map from '../../components/Map/map';
+// import DropdownMenuDemo from '../../components/Dropdown/dropdown_radix';
+import Dropdown from '../../components/Dropdown/dropdown';
 
-export default function WeatherNow() {
-    
-    return (
-        <div>
-            <h1>Weather Today</h1>
-            <Dropdown />
-        </div>
-    )
+
+const WeatherNow = () => {
+	const [settings, setSettings] = useState({});
+ 
+  return (
+    <Grid>
+      <Content>
+          <Map/>
+      </Content>
+			<Sidebar>
+				<Dropdown />
+      </Sidebar>
+    </Grid>
+  )
 }
+
+export default WeatherNow;

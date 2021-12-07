@@ -1,4 +1,5 @@
-@import "./variables/colors.module.scss";
+@import "./variables/colors";
+@import "./variables/typography";
 
 * {
   margin: 0;
@@ -16,6 +17,7 @@ body {
 body {
   background-color: $background-color-main;
   color: $font-color-white;
+  font-family: $text-body;
 }
 
 a {
@@ -27,6 +29,13 @@ a {
   &:active {
     color: $font-color-yellow;
   }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $text-heading;
 }
 
 /********** Grid **********/

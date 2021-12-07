@@ -1,0 +1,85 @@
+	let categories = [
+		{
+			title: 'Swimming',
+			slug: 'swimming',
+			id: '5ec7d096a90548233654d47c',
+			shortDesc: 'Swimming in Iceland',
+			description: 'Swimming in Iceland long description',
+			months: [
+			'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+			],
+		},
+		{
+			title: 'Museums',
+			slug: 'museums',
+			id: '5ec7d096a90548233654d4aa',
+			shortDesc: 'Swimming in Iceland',
+			description: 'This is a longer description',
+			months: [
+			'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+			],
+		},
+		{
+			title: 'Horse Riding',
+			slug: 'horse-riding',
+			id: "5ec7d096a90548233654d48e",
+			shortDesc: 'Swimming in Iceland',
+			description: 'This is a longer description',
+			months: [
+			'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+			],
+		},
+		{
+			title: 'Hiking',
+			slug: 'hiking',
+			id: "5ec7d096a90548233654d47d",
+			shortDesc: 'Hiking in Iceland',
+			description: 'This is a longer description',
+			months: [
+			'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+			],
+		},
+		{
+			title: 'Geothermal Baths',
+			slug: 'geothermal-baths',
+			id: "5ec7d096a90548233654d493",
+			shortDesc: 'Geothermal Baths are great.',
+			description: 'This is a longer description. Should Describe a little bit about the thing.',
+			months: [
+			'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+			],
+		},
+		{
+			title: 'Culinary Experience',
+			slug: 'culinary-experience',
+			id: "5ec7d096a90548233654d4a0",
+			shortDesc: 'Traditional food.',
+			description: 'This is a longer description. Should Describe a little bit about the thing.',
+			months: [
+			'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+			],
+		},
+		{
+			title: 'Cave Exploring',
+			slug: 'cave-exploring',
+			id: "5ec7d096a90548233654d493",
+			shortDesc: 'Diving and Snorkelling.',
+			description: 'This is a longer description. Should Describe a little bit about the thing.',
+			months: [
+			'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+			],
+		},
+		{
+			title: 'Diving',
+			slug: 'diving',
+			id: "5ec7d096a90548233654d480",
+			tags: [
+				'Adventure', 'Outdoors'
+			],
+			shortDesc: 'Diving and Snorkelling.',
+			description: 'This is a longer description. Should Describe a little bit about the thing.',
+			months: [
+			'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+			],
+		}
+	]
