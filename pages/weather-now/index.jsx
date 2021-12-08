@@ -5,8 +5,7 @@ import Grid from '../../components/WeatherPageLayout/Grid/grid';
 import Content from '../../components/WeatherPageLayout/Content/content';
 import Sidebar from '../../components/WeatherPageLayout/Sidebar/sidebar';
 // import Map from '../../components/Map/map';
-// import DropdownMenuDemo from '../../components/Dropdown/dropdown_radix';
-// import Dropdown from '../../components/Dropdown/dropdown';
+// import DropdownMenuDemo from '../../components/Dropdown/dropdown';
 
 
 const WeatherNow = () => {
@@ -18,6 +17,7 @@ const WeatherNow = () => {
 
       </Content>
 			<Sidebar>
+
       </Sidebar>
     </Grid>
   )
