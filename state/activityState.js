@@ -39,7 +39,6 @@ const wrapState = (s) => ({
   }
 })
 
-
 const checkIfCordAIsWithInBoundaries = (activity, boundaries) => {
   console.log(boundaries)
   const coordinates = activity.location.coordinates
