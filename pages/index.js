@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import Dropdown from '../components/Dropdown/Dropdown'
+import Link from "next/link";
+import Dropdown from "../components/Dropdown/Dropdown";
 
 export default function Home() {
   return (
@@ -7,5 +7,5 @@ export default function Home() {
       <h1>This is the Landing page</h1>
       <Dropdown />
     </div>
-  )
+  );
 }

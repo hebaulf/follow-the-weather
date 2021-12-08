@@ -1,62 +1,100 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
+import * as Slider from "@radix-ui/react-slider";
 import { stations } from "../../data/stations";
 import styles from "../../styles/components/dropdown.module.scss";
 import React, { useEffect, useState } from "react";
 
-export const Dropdown = () => {
-  const [id, setID] = useState("Reykjavík");
-  const [station, setStation] = useState([]);
+export const DropdownMenuDemo = () => {
+  const [id, setID] = useState();
+  const [lat, setLatitude] = useState();
+  const [lon, setLongitude] = useState();
+  // const [station, setStation] = useState([]);
   const [meteo, setMeteo] = useState({});
 
+  // API params
   const URL = `https://api.openweathermap.org/data/2.5/onecall`;
   const API_KEY = `c44f77911579d2cbc82efc379374400c`;
 
+  // To set the station already on a selected city
+  useEffect(() => {
+    getStation("Reykjavik");
+  }, []);
+
+  // API call to get coords to pass it into another API to get the weather
   const getStation = async (id) => {
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${id}&appid=${API_KEY}`
     );
     const data = await res.json();
-    const latLon = data;
+    const latLon = data.coord;
     const res2 = await fetch(
-      `${URL}?lat=${latLon.coord.lat}&lon=${latLon.coord.lon}&exclude=minutely&appid=${API_KEY}&units=metric`
+      `${URL}?lat=${latLon.lat}&lon=${latLon.lon}&exclude=minutely&appid=${API_KEY}&units=metric`
     );
     const weatherRender = await res2.json();
     console.log(weatherRender);
     setMeteo(weatherRender);
-    setStation(latLon);
+    // setStation(latLon);
+    setLatitude(latLon.lat);
+    setLongitude(latLon.lon);
     setID(id);
+  };
+
+  // Slider to get daily weather
+  const [valueSlider, setValueSlider] = React.useState([3]);
+  const handleValueChange = (valueSlider) => {
+    setValueSlider(valueSlider);
   };
 
   return (
     <>
       <div className={styles.main}>
         <div>
-          <DropdownMenu.Root>
-            <DropdownMenu.Trigger>Select the city</DropdownMenu.Trigger>
-            <DropdownMenu.Content>
-              {stations.map((station) => (
-                <DropdownMenu.Item
-                  onSelect={(e) => getStation(e.target.innerText)}
-                  value={station.name}
-                >
-                  {station.name}
-                </DropdownMenu.Item>
-              ))}
-            </DropdownMenu.Content>
-          </DropdownMenu.Root>
-
-          <h4>Here is the weather for {id}</h4>
+          <div>
+            <form>
+              <select onChange={(e) => getStation(e.target.value)}>
+                {stations.map((station) => (
+                  <option value={station.name}>{station.name}</option>
+                ))}
+              </select>
+            </form>
+            <h3>You have selected {id}</h3>
+          </div>
+          <div>
+            <h2>Current weather</h2>
+            <p>
+              Date and time:{" "}
+              {new Date(meteo.current?.dt * 1000).toLocaleString("en-GB", {
+                timeZone: "UTC",
+              })}
+            </p>
+            <p>Temperature: {meteo.current?.temp} °C </p>
+            <p>Feels like: {meteo.current?.feels_like} °C </p>
+            {meteo.curren?.weather.map((description) => (
+              <p>{description.main}</p>
+            ))}
+          </div>
         </div>
-
         <div>
-          <h2>Current weather</h2>
-          <p>Temperature: {meteo.current?.temp} °C </p>
-          <p>Feels like: {meteo.current?.feels_like} °C </p>
-          {meteo.current?.weather.map((description) => (
-            <p>{description.main}</p>
-          ))}
-
+          <h2>Daily weather</h2>
+          <p>Value: {valueSlider}</p>
+          <div className={styles.returnDiv}>
+            <form>
+              <Slider.Root
+                className={styles.slider}
+                step={0.1} // HERE
+                min={0}
+                max={5}
+                value={valueSlider}
+                onValueChange={handleValueChange}
+              >
+                <Slider.Track className={styles.sliderTrack}>
+                  <Slider.Range />
+                </Slider.Track>
+                <Slider.Thumb className={styles.sliderThumb} />
+              </Slider.Root>
+            </form>
+          </div>
         </div>
         <div>
           <h2>Hourly weather</h2>
@@ -71,7 +109,10 @@ export const Dropdown = () => {
                           {new Date(hours.dt * 1000).toLocaleString("en-GB", {
                             timeZone: "UTC",
                           })}
-
+                          {/* {new Date(hours.dt * 1000).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })} */}
                         </tag>
                         <tag>{Math.round(hours.temp)} °C</tag>
                       </div>
@@ -93,4 +134,4 @@ export const Dropdown = () => {
   );
 };
 
-export default Dropdown;
+export default DropdownMenuDemo;
