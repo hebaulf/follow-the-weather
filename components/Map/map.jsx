@@ -5,6 +5,8 @@ import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
 import Image from 'next/image'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import style from './map.module.scss'
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,4.5,2,10c0,2,0.6,3.9,1.6,5.4c0,0.1,0.1,0.2,0.2,0.3
@@ -37,13 +39,12 @@ const Map = () => {
 
   console.log('activities', activities)
 
-  // Set coordinates to points to work with mapbox
-  const points = activities.map(activity => ({
+  const newLocal = activities.map(activity => ({
     type: "Feature",
     properties: {
       id: activity.id,
-      name: activity.translations[0].name,
-      description: activity.translations[0].description,
+      name: activity.translations[1].name,
+      description: activity.translations[1].description,
       website: activity.website,
       latitude: parseFloat(activity.location.coordinates[1]),
       longitude: parseFloat(activity.location.coordinates[0])
@@ -55,9 +56,10 @@ const Map = () => {
         parseFloat(activity.location.coordinates[0])
       ]
     },
-    
-  }));
-  console.log(points)
+  }))
+  // Set coordinates to points to work with mapbox
+  const points = newLocal;
+  console.log('these are the location', points)
 
   // set viewport to new locations
   const [viewport, setViewport] = useState({
@@ -67,13 +69,10 @@ const Map = () => {
     longitude: -18.5,
     latitude: 65,
   });
- 
 
-  const geolocateControlStyle = {
-    right: 10,
-    top: 10
-  }
+  console.log('show the viewport loc', viewport)
 
+  
   const pinSize = (`${viewport.zoom}` * 1.5);
   
     const pinStyle = {
@@ -83,6 +82,26 @@ const Map = () => {
       width: `${pinSize}px`,
       height: `${pinSize}px`
     };
+
+  /* const pointMarker = useMemo(
+    () => (
+      <Marker
+        key={point.id} 
+        offsetLeft={`${-pinSize}` / 2}
+        offsetTop={`${-pinSize}` / 2}
+        longitude={parseFloat(point.geometry.coordinates[1])}
+        latitude={parseFloat(point.geometry.coordinates[0])}
+      >
+        <FontAwesomeIcon
+          icon={faMapMarkerAlt}
+          width={viewport.zoom * 5}
+          height={viewport.zoom * 5}
+          color={"#f53357"}
+        />
+      </Marker>
+    ),
+    [clicked, viewport.zoom]
+  ); */
 
   /* const pointMarkers = useMemo((pinStyle, pinSize) => points.map(point => (
       <Marker offsetLeft={`${-pinSize}`/2} offsetTop={`${-pinSize}`/2} key={point.id} longitude={parseFloat(point.geometry.coordinates[1])} latitude={parseFloat(point.geometry.coordinates[0])} >
@@ -99,7 +118,10 @@ const Map = () => {
       minZoom={4}
       mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
       mapStyle="mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
-      onViewportChange={(nextViewport) => setViewport(nextViewport)}
+      onViewportChange={(nextViewport) => {
+        setViewport(nextViewport);
+        //setClicked({...clicked, zoom: nextViewport.zoom})
+      }}
       onInteractionStateChange={(extra) => {
         if (!extra.isDragging && mapRef.current) {
           const bounds = mapRef.current.getMap().getBounds();
@@ -124,5 +146,4 @@ export default Map;
         positionOptions={{ enableHighAccuracy: true }}
         trackUserLocation={true}
         auto
-  
       /> */

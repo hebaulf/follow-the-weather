@@ -1,9 +1,5 @@
 export const stations = [
     {
-        name: "Reykjavik",
-        region: "Capital Region"
-    },
-    {
         name: "Keflavik",
         region: "Southern Peninsula"
     },
@@ -67,10 +63,7 @@ export const stations = [
         name: "Isafjordur",
         region: "Westfjords"
     },
-    {
-        name: "Stykkisholmur",
-        region: "Western Region"
-    },
+
     {
         name: "Olafsvik",
         region: "Western Region"
