@@ -1,7 +1,7 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as ActivityState from '../../state/activityState'
-import ReactMapGL, { Marker, Popup } from 'react-map-gl'
+import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
 import Image from 'next/image'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import style from './map.module.scss'
@@ -14,17 +14,16 @@ const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,
  
 
 const Map = () => {
+
   const mapRef = useRef(null);
   const activityState = ActivityState.useGlobalState()
-
   const activities = activityState.getActivitiesSelectedCategory();
   const selectedCategory = activityState.getSelectedCategory();
   // ACTIVITIES
   //const [activities, setActivities] = useState([])
   const router = useRouter()
   const { slug } = router.query || ['swimming']
-  console.log({ slug })
-
+  
   useEffect(() => {
     const getData = async () => {
       const r = await fetch(`/api/weather-now/thingstodo/${selectedCategory}`);
@@ -34,7 +33,7 @@ const Map = () => {
     }
 
     selectedCategory && getData();
-  }, [activityState, selectedCategory])
+  }, [selectedCategory])
 
   console.log('activities', activities)
 
@@ -68,21 +67,29 @@ const Map = () => {
     longitude: -18.5,
     latitude: 65,
   });
+ 
 
-  const bounds = [
-    [66, 6, -25, 6], // NorthWest
-    [62.9, -12.9] // Southeast coordinates
-  ];
-  
-  
-  const pinSize = (`${viewport.zoom}` * 1.5) ;
-  const pinStyle = {
-    border: 'none',
-    stroke: 'none',
-    cursor: 'pointer',
-    width:`${pinSize}px`,
-    height:`${pinSize}px`
+  const geolocateControlStyle = {
+    right: 10,
+    top: 10
   }
+
+  const pinSize = (`${viewport.zoom}` * 1.5);
+  
+    const pinStyle = {
+      border: 'none',
+      stroke: 'none',
+      cursor: 'pointer',
+      width: `${pinSize}px`,
+      height: `${pinSize}px`
+    };
+
+  /* const pointMarkers = useMemo((pinStyle, pinSize) => points.map(point => (
+      <Marker offsetLeft={`${-pinSize}`/2} offsetTop={`${-pinSize}`/2} key={point.id} longitude={parseFloat(point.geometry.coordinates[1])} latitude={parseFloat(point.geometry.coordinates[0])} >
+          <button className={style.icon} style={{ ...pinStyle }}/>
+       </Marker>
+    )
+  ),[points]) */
  
   return (
     <ReactMapGL 
@@ -96,7 +103,7 @@ const Map = () => {
       onInteractionStateChange={(extra) => {
         if (!extra.isDragging && mapRef.current) {
           const bounds = mapRef.current.getMap().getBounds();
-          console.log(bounds)
+          //console.log(bounds)
           ActivityState.accessGlobalState().setBoundaries(bounds);
         }
       }}
@@ -111,3 +118,11 @@ const Map = () => {
 }
 
 export default Map;
+
+/* <GeolocateControl
+        style={geolocateControlStyle}
+        positionOptions={{ enableHighAccuracy: true }}
+        trackUserLocation={true}
+        auto
+  
+      /> */

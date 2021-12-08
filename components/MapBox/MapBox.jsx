@@ -13,16 +13,6 @@ const Mapbox = ({ isMapbox, setIsMapbox, location, getWeather }) => {
 
   const [showPopup, togglePopup] = useState(false);
 
-  const [viewport, setViewport] = useState({
-    width: "100%",
-    height: "100%",
-    latitude:
-      location.latitude || (clicked && clicked.lngLat && clicked.lngLat[1]),
-    longitude:
-      location.longitude || (clicked && clicked.lngLat && clicked.lngLat[0]),
-    zoom: clicked ? clicked.zoom : 10,
-  });
-
   useEffect(() => {
     setViewport({
       width: "100%",

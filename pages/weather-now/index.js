@@ -6,7 +6,6 @@ import Content from '../../components/Layout/Content/content';
 import Sidebar from '../../components/Layout/Sidebar/sidebar';
 import Map from '../../components/Map/map';
 import DropdownMenuDemo from '../../components/Dropdown/dropdown_radix';
-import Weather from '../../components/Weather/weather';
 import * as ActivityState from '../../state/activityState'
 import ActivityCard from '../../components/ThingsToDo/ServiceListByCategory/ActivityCard/activityCard';
 
