@@ -1,20 +1,26 @@
-import React from 'react';
-import Dropdown from '../../components/Dropdown/Dropdown';
-import style from './styles.module.scss'
-import CategoryContext from '../../context/categoryContext';
-import categoriesObject from '../../context/categoriesObject';
+import { useState, useEffect } from 'react'
+// import { useRouter } from 'next/router'
+// import Image from 'next/image'
+import Grid from '../../components/Layout/Grid/grid';
+import Content from '../../components/Layout/Content/content';
+import Sidebar from '../../components/Layout/Sidebar/sidebar';
+import Map from '../../components/Map/map';
+import Dropdown from '../../components/Dropdown/dropdown';
 
-export default function WeatherNow() {
-    //const [categorySelected, setCategorySelected] = useState("swimming");
-    //const categoryObject = categoriesObject;
-	//wrap in categorycontext.provider
-    
-    return (
-        <div>
-          <div className={style.grid}>
-            <h1>Weather Today</h1>
-            <Dropdown />
-        	</div> 
-        </div>
-    )
+
+const WeatherNow = () => {
+	const [settings, setSettings] = useState({});
+ 
+  return (
+    <Grid>
+      <Content>
+          <Map/>
+      </Content>
+			<Sidebar>
+				<Dropdown />
+      </Sidebar>
+    </Grid>
+  )
 }
+
+export default WeatherNow;
