@@ -1,0 +1,110 @@
+@import "./variables/colors";
+@import "./variables/typography";
+@import "./variables/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 320px;
+  font-size: $text-base-size;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $background-color-main;
+  color: $font-color-white;
+  font-family: $text-body;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: $font-color-white;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+
+  &:hover,
+  &:active {
+    color: $font-color-yellow;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $text-heading;
+
+  &.sans-text {
+    font-family: $text-body;
+  }
+}
+
+h1 {
+  @include heading-1;
+
+  &.display {
+    @include display-lg;
+  }
+}
+h2 {
+  @include heading-2;
+}
+h3 {
+  @include heading-3;
+}
+h4 {
+  @include heading-4;
+}
+p {
+  font-family: $text-body;
+  @include text-base;
+
+  &.pretitle {
+    @include text-pretitle;
+  }
+  &.large {
+    @include text-lg;
+  }
+  &.small {
+    @include text-sm;
+  }
+}
+
+li,
+a,
+span {
+  @include text-base;
+}
+
+/********** Grid **********/
+.grid-columns {
+  display: grid;
+  grid-auto-flow: row;
+  width: min(90%, 75rem);
+  margin: 3rem auto;
+
+  @media (min-width: 55em) {
+    grid-auto-flow: column;
+  }
+}
+
+.grid-2-columns {
+  grid-template-columns: 50% 50%;
+}
+
+.grid-3-columns {
+  grid-template-columns: 33% 33% 33%;
+}
+
+.grid-4-columns {
+  grid-template-columns: 25% 25% 25% 25%;
+}
