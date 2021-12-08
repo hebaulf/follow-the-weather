@@ -16,9 +16,9 @@ const Weather = ({ settings, setSettings }) => {
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
       enableHighAccuracy: true,
     });
-  }, []);
+  }, [errorLocation, successLocation]);
 
-  const successLocation = (position) => {
+  const newLocal = (position) => {
     const {
       coords: { latitude, longitude },
     } = position;
@@ -27,6 +27,7 @@ const Weather = ({ settings, setSettings }) => {
 
     getWeather([latitude, longitude], "coords");
   };
+  const successLocation = newLocal;
 
   const getWeather = async (location, type) => {
     setIsLoading(true);
@@ -65,9 +66,10 @@ const Weather = ({ settings, setSettings }) => {
     }
   };
 
-  const errorLocation = () => {
+  const newLocal_1 = () => {
     getWeather("Reykjavik", "city");
   };
+  const errorLocation = newLocal_1;
 
   return (
     <>
