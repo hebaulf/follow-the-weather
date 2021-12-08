@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 // import { useRouter } from 'next/router'
 // import Image from 'next/image'
-import Grid from '../../components/Layout/Grid/grid';
-import Content from '../../components/Layout/Content/content';
-import Sidebar from '../../components/Layout/Sidebar/sidebar';
-import Map from '../../components/Map/map';
+import Grid from '../../components/WeatherPageLayout/Grid/grid';
+import Content from '../../components/WeatherPageLayout/Content/content';
+import Sidebar from '../../components/WeatherPageLayout/Sidebar/sidebar';
+// import Map from '../../components/Map/map';
 // import DropdownMenuDemo from '../../components/Dropdown/dropdown_radix';
-import Dropdown from '../../components/Dropdown/dropdown';
+// import Dropdown from '../../components/Dropdown/dropdown';
 
 
 const WeatherNow = () => {
@@ -15,10 +15,9 @@ const WeatherNow = () => {
   return (
     <Grid>
       <Content>
-          <Map/>
+
       </Content>
 			<Sidebar>
-				<Dropdown />
       </Sidebar>
     </Grid>
   )

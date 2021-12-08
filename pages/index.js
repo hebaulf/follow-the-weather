@@ -14,15 +14,15 @@ const Home = () => {
     <>
       <div className={style.content}>
         <div className={style.icon}>
-          <Image src="/svg/weathericon.svg" alt="" height={330} width={330} />
+          <Image src="/svg/weathericon.svg" alt="weather icon sun and clouds" height={330} width={330} />
         </div>
         <div className={style.text}>
           <span>Follow</span>
-          <div className={style.heading}> 
-            <h1 className={`display`}>
-              <Image src="/svg/arrow.svg" alt="" height={30} width={129} />
-              the Weather
-            </h1>
+          <div className={style.heading}>
+            <div className={style.arrow}>
+              <Image src="/svg/arrow.svg" alt="decorative arrow" height={30} width={129} />
+            </div>
+            <h1 className={`display`}>the Weather</h1>
           </div>
           <h4 className={`sans-text`}>Be mentally prepaired for the ever changing icelandic weather.</h4>
         </div>

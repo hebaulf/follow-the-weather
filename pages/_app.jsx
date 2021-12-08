@@ -1,9 +1,7 @@
-import Head from 'next/head';
-import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { IdProvider } from '@radix-ui/react-id';
-import Layout from '../components/Layout';
-import Page from '../layouts/page';
+import Layout from '../components/Layout/Layout';
+
 import '../styles/globals.scss';
 
 function App({ Component, pageProps, router }) {
@@ -24,4 +22,4 @@ function App({ Component, pageProps, router }) {
   )
 }
 
-export default App
+export default App;
