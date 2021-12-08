@@ -62,7 +62,7 @@ export const stations = [
         region: "Northeastern Region"
     },
     {
-        name: "Sauðárkrokur",
+        name: "Sauðárkrókur",
         region: "Northwestern Region"
     },
     {

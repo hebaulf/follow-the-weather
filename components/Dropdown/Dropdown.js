@@ -7,8 +7,8 @@ import React, { useEffect, useState } from "react";
 
 export const DropdownMenuDemo = () => {
   const [id, setID] = useState();
-  const [lat, setLatitude] = useState();
-  const [lon, setLongitude] = useState();
+  // const [lat, setLatitude] = useState();
+  // const [lon, setLongitude] = useState();
   // const [station, setStation] = useState([]);
   const [meteo, setMeteo] = useState({});
 
@@ -29,19 +29,19 @@ export const DropdownMenuDemo = () => {
     const data = await res.json();
     const latLon = data.coord;
     const res2 = await fetch(
-      `${URL}?lat=${latLon.lat}&lon=${latLon.lon}&exclude=minutely&appid=${API_KEY}&units=metric`
+      `${URL}?lat=${latLon?.lat}&lon=${latLon?.lon}&exclude=minutely&appid=${API_KEY}&units=metric`
     );
     const weatherRender = await res2.json();
     console.log(weatherRender);
     setMeteo(weatherRender);
     // setStation(latLon);
-    setLatitude(latLon.lat);
-    setLongitude(latLon.lon);
+    // setLatitude(latLon.lat);
+    // setLongitude(latLon.lon);
     setID(id);
   };
 
   // Slider to get daily weather
-  const [valueSlider, setValueSlider] = React.useState([3]);
+  const [valueSlider, setValueSlider] = React.useState([1638968400]);
   const handleValueChange = (valueSlider) => {
     setValueSlider(valueSlider);
   };
@@ -95,13 +95,20 @@ export const DropdownMenuDemo = () => {
         <div>
           <h2>Daily weather</h2>
           <p>Value: {valueSlider}</p>
+
+          {/* {meteo.daily?.map((dailyWeather) => (
+            <p>Description: {dailyWeather.dt}</p>
+          ))} */}
+
+    
+
           <div className={styles.returnDiv}>
             <form>
               <Slider.Root
                 className={styles.slider}
-                step={0.1} // HERE
-                min={0}
-                max={5}
+                step={86400} // HERE
+                min={1638968400}
+                max={1639141200}
                 value={valueSlider}
                 onValueChange={handleValueChange}
               >
