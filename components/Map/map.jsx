@@ -1,12 +1,10 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as ActivityState from '../../state/activityState'
-import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
-import Image from 'next/image'
+import ReactMapGL, { Marker } from 'react-map-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import style from './map.module.scss'
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,4.5,2,10c0,2,0.6,3.9,1.6,5.4c0,0.1,0.1,0.2,0.2,0.3

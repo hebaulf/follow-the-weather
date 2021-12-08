@@ -1,6 +1,6 @@
 import React from 'react';
-import { createState, useState, State } from '@hookstate/core';
-import { evolve, clone } from 'ramda'
+import { createState, useState } from '@hookstate/core';
+//import { evolve, clone } from 'ramda'
 
 // internal variables
 // pass in object 
