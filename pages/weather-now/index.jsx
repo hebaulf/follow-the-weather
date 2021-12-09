@@ -1,24 +1,18 @@
 import { useState, useEffect } from 'react'
 import Grid from '../../components/WeatherPageLayout/Grid/grid';
 import Content from '../../components/WeatherPageLayout/Content/content';
-import Sidebar from '../../components/WeatherPageLayout/Sidebar/sidebar';
-import Dropdown from '../../components/Dropdown';
-import Hourly from '../../components/WeatherPageLayout/Weather/Hourly/Hourly';
+import SideBar from '../../components/WeatherPageLayout/Sidebar/Sidebar';
+import MapboxContextProvider from '../../state/MapboxContext';
+import WeatherContext from '../../state/WeatherContext';
 import Map from '../../components/Map/map';
-import MapSlider from '../../components/MapSlider/mapSlider';
-
-
-
-const WeatherNow = () => {
-  const [meteo, setMeteo] = useState({});
-
+const WeatherNow = ({children}) => {
+    
   return (
-    <Grid>
-      <Content>
+    <MapboxContextProvider>
+      <WeatherContext>
         <Map />
-      </Content>
-      <Sidebar/>
-    </Grid>
+      </WeatherContext>
+    </MapboxContextProvider>
   )
 }
 export default WeatherNow;

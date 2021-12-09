@@ -1,0 +1,46 @@
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/variables/typography';
+@import '../../../styles/variables/mixins';
+
+.form {
+  padding: 1rem;
+  z-index: 2;
+  background-color: $white;
+
+  &__group {
+    display: flex;
+  }
+  &__input {
+    border: none;
+    border-bottom: 1px solid $white;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &__btn {
+    background-color: $color-yellow;
+    border: none;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  height: 3rem;
+  width: 3rem;
+  background-color: $color-yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+}

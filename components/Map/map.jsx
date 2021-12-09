@@ -1,16 +1,26 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useContext, useCallback } from 'react'
 import * as ActivityState from '../../state/activityState'
 import { useRouter } from 'next/router'
-import ReactMapGL from 'react-map-gl'
+import ReactMapGL, {Marker} from 'react-map-gl'
 import Geocoder from 'react-map-gl-geocoder'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import style from './map.module.scss'
+import LocationMarker from '../MapMarkers/locationMarker'
+import Dashboard from '../WeatherPageLayout/Dashboard/DashBoard'
 
+
+import { WeatherContext } from '../../state/WeatherContext'
+import { MapboxContext } from '../../state/MapboxContext'
+import { getWeather } from '../../pages/api/weather-now/weather'
+
+import SideBar from '../WeatherPageLayout/Sidebar/Sidebar'
+import Grid from '../WeatherPageLayout/Grid/grid'
 
 const Map = () => {
   // MAP VIEWPORT
   const mapRef = useRef(null);
+  const { data } = useContext(WeatherContext);
   //set variables with states to render activities and selected cat if within viewport
   const activityState = ActivityState.useGlobalState();
   const activities = activityState.getActivitiesSelectedCategory();
@@ -29,6 +39,23 @@ const Map = () => {
     selectedCategory && getData();
   }, [selectedCategory]) //don't pass in activityState, because it continues to reload 
   //console.log('activities', activities)
+
+ /* const [viewport, setViewport] = useState({
+    zoom: 8,
+    longitude: -18.5,
+    latitude: 65,
+    bearing: 0,
+    pitch: 0
+ }); */
+  
+ // Hook for viewport state change - set initial state
+
+  const geocoderContainerRef = useRef();  // create a REF for the geocoder so it can be placed outside of MAP cont
+
+  const handleViewportChange = useCallback(  
+    (newViewport) => setViewport(newViewport),
+    []
+  );// Callback function for setting the newViewport
 
   // Create a geojson datatype for the activities from the API
   const activityCollection = activities.map(activity => ({
@@ -50,64 +77,72 @@ const Map = () => {
     },
   }));
   const points = activityCollection;
-  //console.log('these are the activities', points);
-  
-  // Set coordinates to points to work with mapbox
-  
 
+  const pinSize = (6 * 1.5);
 
-  // Hook for viewport state change - set initial state
-  const [viewport, setViewport] = useState({
-    zoom: 6,
-    longitude: -18.5,
-    latitude: 65,
-    bearing: 0,
-    pitch: 0
-  });
-   // create a REF for the geocoder Search input to the Map - so it can be placed outside
-  const geocoderContainerRef = useRef();
-  // useRef() because we need to 
-
-  // Callback function for setting the newViewport
-  const handleViewportChange = useCallback(
-    (newViewport) => setViewport(newViewport),
-    []
-  );
-
-  const [weather, setWeather] = useState({});
-  const [allData, setAllData] = useState(null);
-  const [selectedLocation, setSelectedLocation] = useState('Reykjavik');
-  const [isHighLighted, setIsHighLighted] = useState()
-  
-  // fetch data from location geojson locally
-  useEffect(() => {
-    /* global fetch */
-    fetch(
-      '../../data/locations.geojson'
-    )
-      .then(resp => resp.json())
-      .then(json => setAllData(json));
-  }, []);
-
-  // LOCATION POINTS - interactive: onClick => 
-  // triggers getWeatherData for the selected location 
-  // sets new weather info in sidebar
-  // viewport changes and moves to selected location on map
-
-  //hook state - takes array [lon,lat]
-  const [interactivePlaceIds, setInteractivePlaceIds] = useState([])
+  const pinStyle = {
+    backgroundColor: 'red',
+    zIndex: '10',
+    border: 'none',
+    borderRadius: `${pinSize}px`,
+    stroke: 'none',
+    cursor: 'pointer',
+    width: `${pinSize}px`,
+    height: `${pinSize}px`
+  };  
+//console.log('these are the activities', points);
  
- 
+    
 
-    //locations arnavala.ckwx0vs2j19ts20p8is3rgqd5-3aeaa
+  const [city, setCity] = useState('')
+  const { viewport, setViewport } = useContext(MapboxContext)
+  const { setData, setLoading } = useContext(WeatherContext)
+  const [error, setError] = useState(false)
   
+  const setWeather = (data) => {
+    setViewport({
+      ...viewport,
+      latitude: data.coord.lat,
+      longitude: data.coord.lon
+    });
+    setData({
+      data
+    });
+  };
+
+  // input city search
+  const onChangeHandler = (e) => {
+    e.preventDefault();
+    setCity(e.target.value);
+    
+  }
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const data = await getWeather(city);
+
+    if (data.cod !== 200) {
+      setError(data);
+      console.log(data)
+    } else {
+      setWeather(data)
+      setError(false);
+    }
+    setLoading(false)
+    setCity('');
+  };
+
   return (
-    <div style={{ height: '100%', width: '100%' }}>
-      <div
-        ref={geocoderContainerRef}
-        style={{ position: 'relative', top: 100, right: 20, zIndex: 10 }}
-      />
-        <ReactMapGL
+    <Grid >
+      <SideBar style={{zIndex: 1}}>
+        
+        <div ref={geocoderContainerRef} onSubmit={submitHandler}>
+          <input onChange={onChangeHandler} />
+        </div>
+        {data && <Dashboard {...data} />}
+      </SideBar>
+      <ReactMapGL
         ref={mapRef}
         {...viewport}
         width='100%'
@@ -117,16 +152,26 @@ const Map = () => {
         onViewportChange={handleViewportChange}
         attributionControl={false}
       >
-          <Geocoder
+        <Geocoder
           mapRef={mapRef}
           containerRef={geocoderContainerRef}
           onViewportChange={handleViewportChange}
           mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
-          position='top-left'
+          position='bottom-right'
           
         />
+        {points.map(point => (
+          <LocationMarker
+            key={point.id}
+            pinStyle={pinStyle}
+            longitude={parseFloat(point.geometry.coordinates[1])} 
+            latitude={parseFloat(point.geometry.coordinates[0])} 
+            offsetLeft={`${-pinSize}`/ 2}
+            offsetTop={`${-pinSize}` / 2}
+          />
+        ))}
       </ReactMapGL>
-    </div>
+    </Grid>
   )
 }
 

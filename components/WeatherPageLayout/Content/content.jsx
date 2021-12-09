@@ -1,9 +1,10 @@
+import Map from '../../Map/map'
 import style from './content.module.scss'
 
-const Content = ({children}) => {
+const Content = () => {
   return (
     <div className={style.content}>
-    {children}
+      <Map/>
     </div>
   )
 }
