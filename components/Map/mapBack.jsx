@@ -6,7 +6,7 @@ import Geocoder from 'react-map-gl-geocoder'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import style from './map.module.scss'
-import LocationMarker from '../MapMarkers/locationMarker'
+import LocationMarker from '../MapMarkers/activityMarker'
 import Dashboard from '../WeatherPageLayout/Dashboard/DashBoard'
 
 

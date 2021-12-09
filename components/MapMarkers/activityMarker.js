@@ -2,8 +2,9 @@ import { Marker } from 'react-map-gl'
 import style from './markers.module.scss'
 
 
-const LocationMarker = ({ key, latitude, longitude, offsetLeft, offsetTop, pinStyle}) => {
+const ActivityMarker = ({ key, latitude, longitude, offsetLeft, offsetTop, pinStyle}) => {
 
+  
   
   return (
     <Marker
@@ -18,4 +19,4 @@ const LocationMarker = ({ key, latitude, longitude, offsetLeft, offsetTop, pinSt
   )
 }
 
-export default LocationMarker
+export default ActivityMarker;

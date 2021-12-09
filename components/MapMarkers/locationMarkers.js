@@ -1,14 +1,20 @@
+import * as React from 'react'
 import { Marker } from 'react-map-gl'
 import style from './markers.module.scss'
 
 
-const PlaceMarker = ({ latitude, longitude, data }) => {
 
-  return (
+const LocationMarkers = (props) => {
+  const { data, onClick } = props;
+
+  const
+
+
+
+
+
     <Marker
-      latitude={latitude}
-      longitude={longitude}
-      offsetLeft={-12}
+}
       offsetTop={-12}
     >
       <div className={style.markerContainer}>
@@ -22,4 +28,4 @@ const PlaceMarker = ({ latitude, longitude, data }) => {
   )
 }
 
-export default PlaceMarker
+export default React.memo(LocationMarkers)

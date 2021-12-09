@@ -1,3 +1,18 @@
-@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/colors';
 @import '../../styles/variables/typography';
 @import '../../styles/variables/mixins';
+
+.activityMarker {
+  background-color: $primary-500;
+  z-index: 10;
+  border: none;
+  border-radius: 999;
+  stroke: none;
+}
+
+/* backgroundColor: $primary-500;
+  z-index: '10',
+    border: 'none',
+    borderRadius: `${pinSize}px`,
+    stroke: 'none',
+    cursor: 'pointer', */
