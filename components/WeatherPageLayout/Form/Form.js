@@ -1,14 +1,14 @@
 import { useState, useContext } from 'react'
 import { MapboxContext } from '../../../state/MapboxContext'
 import { WeatherContext } from '../../../state/WeatherContext'
-import { getWeather } from '../../../pages/api/weather-now/weather'
+import { getWeather } from '../../../pages/api/weather-now'
 import FetchError from '../FetchError/FetchError';
 import style from './form.module.scss'
 
 
 
 
-const Form = ({ref}) => {
+const Form = () => {
   const [city, setCity] = useState('')
   const { viewport, setViewport } = useContext(MapboxContext)
   const { setData, setLoading } = useContext(WeatherContext)
@@ -49,8 +49,8 @@ const Form = ({ref}) => {
 
  
   return (
-    <form  onSubmit={ submitHandler} className={style.form}>
-      <div ref={ref} className={style.form__group}>
+    <form  onSubmit={submitHandler} className={style.form}>
+      <div className={style.form__group} value={city}>
         <input
           name='city'
           autoFocus
@@ -72,8 +72,8 @@ const Form = ({ref}) => {
 export default Form;
 
 
-/*  <form  onSubmit={ submitHandler} className={style.form}>
-      <div ref={ref} onChange={onChangeHandler} className={style.form__group}>
+/*  <form  onSubmit={submitHandler} className={style.form}>
+      <div ref={ref} className={style.form__group}>
         <input
           name='city'
           autoFocus

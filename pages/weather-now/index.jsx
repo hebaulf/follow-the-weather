@@ -5,12 +5,21 @@ import SideBar from '../../components/WeatherPageLayout/Sidebar/Sidebar';
 import MapboxContextProvider from '../../state/MapboxContext';
 import WeatherContext from '../../state/WeatherContext';
 import Map from '../../components/Map/map';
-const WeatherNow = ({children}) => {
+
+
+const WeatherNow = ({ children }) => {
     
   return (
     <MapboxContextProvider>
       <WeatherContext>
-        <Map />
+        <Grid>
+          <Content>
+            <ActivityList />
+            <Map />
+            
+          </Content>
+          <SideBar />
+        </Grid>
       </WeatherContext>
     </MapboxContextProvider>
   )

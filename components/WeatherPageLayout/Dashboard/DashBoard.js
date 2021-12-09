@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { WeatherContext } from '../../../state/WeatherContext';
 import style from './dashboard.module.scss'
-
+import Hourly from '../Weather/Hourly/Hourly';
 // eslint-disable-next-line react/display-name
-const Dashboard = React.memo(({ data, isOpen, onClick }) => {
+const Dashboard = React.memo(({ data }) => {
   const { loading } = useContext(WeatherContext);
   const { name : city } = data
   const { temp } = data.main
@@ -22,6 +22,7 @@ const Dashboard = React.memo(({ data, isOpen, onClick }) => {
   return (
     <div className={style.sidebar}>
       <div>
+      
         <h3>{city}</h3>
         <p>{temp}</p>
         <p>{description}</p>
