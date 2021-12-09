@@ -1,14 +1,15 @@
 import Link from 'next/link';
-import ArrowLinkIcon from '../../public/icons/ArrowLinkIcon.svg';
+import Image from 'next/image';
 import style from './pagelink.module.scss';
 
 const PageLink = (props) => {
+
     return (
 
         <Link href={props.href} passHref>
             <a className={style.link}>
                 <p>{props.text}</p>
-                <ArrowLinkIcon className={style.icon} />
+                <Image className={style.icon} src={`/icons/ArrowLinkIcon.svg`} alt="daylight icon" height={48} width={72} />
             </a>
         </Link>
 

@@ -2,10 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 20rem;
+  max-width: 13rem;
+
+  p {
+    width: 6.5rem;
+  }
 
   .icon {
     width: 100%;
+    min-width: 7rem;
     overflow: visible;
   }
 }

@@ -8,12 +8,8 @@ import PageLink from '../../components/PageLink/pagelink';
 
 import { monthlyInfo } from '../../utils/monthlyInfo';
 
-import Daylight from '../../public/icons/weatherInfo-icons/Daylight.svg';
-import Precipitation from '../../public/icons/weatherInfo-icons/Precipitation.svg';
-import Temperature from '../../public/icons/weatherInfo-icons/Temperature.svg';
-import Wind from '../../public/icons/weatherInfo-icons/Wind.svg';
-
 export default function WeatherMonths() {
+    const iconSrc = '/icons/weatherInfo-icons/';
 
     return (
         <Layout>
@@ -48,19 +44,19 @@ export default function WeatherMonths() {
                                         <p className={style.paragraph}>{month.text}</p>
                                         <div className={style.info}>
                                             <div className={style.iteminfo}>
-                                                <Daylight className={style.icon} />
+                                                <Image className={style.icon} src={`${iconSrc}Daylight.svg`} alt="daylight icon" height={16} width={16} />
                                                 <p>{month.info.daylight}</p>
                                             </div>
                                             <div className={style.iteminfo}>
-                                                <Temperature className={style.icon} />
+                                                <Image className={style.icon} src={`${iconSrc}Temperature.svg`} alt="temperature icon" height={16} width={16} />
                                                 <p>{`${month.info.temperature}`}</p>
                                             </div>
                                             <div className={style.iteminfo}>
-                                                <Precipitation className={style.icon} />
+                                                <Image className={style.icon} src={`${iconSrc}Precipitation.svg`} alt="rainfall icon" height={16} width={16} />
                                                 <p>{`${month.info.rainfall}`}</p>
                                             </div>
                                             <div className={style.iteminfo}>
-                                                <Wind className={style.icon} />
+                                                <Image className={style.icon} src={`${iconSrc}Wind.svg`} alt="wind icon" height={16} width={16} />
                                                 <p>{`${month.info.wind}`}</p>
                                             </div>
                                         </div>
