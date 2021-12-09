@@ -3,10 +3,12 @@
 @import "../../styles/variables/mixins";
 
 .hero {
-  background-image: url("/images/months/months-cover.jpg");
+  background-image: url("/images/months/months-cover.jpg"),
+    url("/images/months/blur-img/months-cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: $neutral-800;
   height: calc(100vh - 8rem);
   min-height: 40rem;
 }
@@ -21,6 +23,12 @@
   }
 }
 
+.monthlist {
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
 .monthitem {
   display: flex;
   flex-direction: row;
@@ -29,9 +37,49 @@
   align-items: center;
   flex-grow: 1;
   flex-basis: 0;
+  margin: 15% 0;
 
-  .image,
+  &:nth-child(odd) {
+    .image {
+      order: 2;
+    }
+  }
+
+  .image {
+    width: 53%;
+  }
+
   .text {
-    width: 50%;
+    width: 47%;
+    padding: 0 5%;
+
+    .title {
+      font-family: $text-heading-serif;
+      margin-bottom: 2rem;
+    }
+
+    .paragraph {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .monthinfo {
+    border-left: 2px solid $secondary-500;
+    padding: 0 1rem;
+
+    .iteminfo {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 1rem;
+    }
+
+    p {
+      line-height: 2;
+    }
+
+    .icon {
+      padding-right: 1rem;
+    }
   }
 }

@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 // import { useRouter } from 'next/router'
 // import Image from 'next/image'
+import Layout from '../../components/Layout/Layout';
 import Grid from '../../components/WeatherPageLayout/Grid/grid';
 import Content from '../../components/WeatherPageLayout/Content/content';
 import Sidebar from '../../components/WeatherPageLayout/Sidebar/sidebar';
@@ -12,14 +13,16 @@ const WeatherNow = () => {
 	const [settings, setSettings] = useState({});
  
   return (
-    <Grid>
-      <Content>
+    <Layout>
+      <Grid>
+        <Content>
 
-      </Content>
-			<Sidebar>
+        </Content>
+        <Sidebar>
 
-      </Sidebar>
-    </Grid>
+        </Sidebar>
+      </Grid>
+    </Layout>
   )
 }
 

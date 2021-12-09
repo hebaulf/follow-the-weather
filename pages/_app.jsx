@@ -1,7 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import { IdProvider } from '@radix-ui/react-id';
-import Layout from '../components/Layout/Layout';
-
+import Header from '../components/Header/header';
 import '../styles/globals.scss';
 
 function App({ Component, pageProps, router }) {
@@ -10,13 +9,12 @@ function App({ Component, pageProps, router }) {
   
   return (
     <IdProvider>
+      <Header />
       <AnimatePresence
         exitBeforeEnter
         initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}>
-        <Layout>
           <Component {...pageProps} />
-        </Layout>
       </AnimatePresence>
     </IdProvider>
   )
