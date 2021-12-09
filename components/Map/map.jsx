@@ -99,8 +99,13 @@ const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
     )
   );
 
-  // PLACES MARKERS - LOCATIONS
-  
+  // PLACES MARKERS - LOCATIONS - WEATHER
+  const weatherMarkers = weatherData?.map(
+    (data, i) => (
+      <Marker></Marker>
+    )
+  )
+
   
   return (
     <Grid >
