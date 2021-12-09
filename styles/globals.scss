@@ -40,6 +40,7 @@ a {
 h1,
 h2 {
   font-family: $text-heading-serif;
+  letter-spacing: 2px;
 
   &.sans-text {
     font-family: $text-body;
@@ -63,6 +64,7 @@ h2 {
 }
 h3 {
   @include heading-3;
+  letter-spacing: 2px;
 }
 h4 {
   @include heading-4;

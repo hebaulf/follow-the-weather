@@ -12,9 +12,7 @@ export default function WeatherElements() {
     return (
         <Layout>
             <div className={style.content}>
-                <div className= {style.hero}>
-
-                </div>
+                <div className= {style.hero}></div>
                 <Heading
                     smalltext="A cuture shaped by"
                     largetext="the Elements"
@@ -35,6 +33,7 @@ export default function WeatherElements() {
                                             placeholder="blur" />
                                     </div>
                                     <div className={style.text} >
+
                                         <h3 className={style.title}>{item.title}</h3>
                                         <p className={style.paragraph}>{item.text}</p>
                                     </div>
@@ -44,7 +43,6 @@ export default function WeatherElements() {
                     </div>
                     <div className={style.bottomlinks}>
                         <h3>Don&apos;t let the weather stop you!</h3>
-                        <p>Find recommended activity</p>
                         <div className={style.pagelinks}>
                             <PageLink href="/weather-now" text="Weather today" />
                             <PageLink href="/weather-elements" text="Weather Culture" />

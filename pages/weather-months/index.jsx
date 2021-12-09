@@ -71,7 +71,6 @@ export default function WeatherMonths() {
                     </div>
                     <div className={style.bottomlinks}>
                         <h3>Don&apos;t let the weather stop you!</h3>
-                        <p>Find recommended activity</p>
                         <div className={style.pagelinks}>
                             <PageLink href="/weather-now" text="Weather today" />
                             <PageLink href="/weather-elements" text="Weather Culture" />
