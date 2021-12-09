@@ -12,7 +12,7 @@ export default function WeatherElements() {
     return (
         <Layout>
             <div className={style.content}>
-                <div className= {style.hero}></div>
+                <div className={style.hero}></div>
                 <Heading
                     smalltext="A cuture shaped by"
                     largetext="the Elements"

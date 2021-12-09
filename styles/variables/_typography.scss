@@ -13,6 +13,20 @@
 }
 
 @font-face {
+  font-family: "FreightBig SemiBold";
+  src: url("/fonts/Freight/FreightBigProBold-Regular.eot");
+  src: url("/fonts/Freight/FreightBigProBold-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/Freight/FreightBigProBold-Regular.woff2") format("woff2"),
+    url("/fonts/Freight/FreightBigProBold-Regular.woff") format("woff"),
+    url("/fonts/Freight/FreightBigProBold-Regular.ttf") format("truetype"),
+    url("/fonts/Freight/FreightBigProBold-Regular.svg#FreightBigProBold-Regular")
+      format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "FreightBig Bold";
   src: url("/fonts/Freight/FreightBigProBold-Regular.eot");
   src: url("/fonts/Freight/FreightBigProBold-Regular.eot?#iefix")
@@ -63,6 +77,7 @@
 /********** Font **********/
 $text-heading-serif: "FreightBig Bold", serif;
 $text-heading-serif-Medium: "FreightBig Medium", serif;
+$text-heading-serif-SemiBold: "FreightBig SemiBold", serif;
 $text-heading-sans: "Apercu", sans-serif;
 $text-body-light: "Apercu Light", sans-serif;
 $text-body-Regular: "Apercu Regular", sans-serif;

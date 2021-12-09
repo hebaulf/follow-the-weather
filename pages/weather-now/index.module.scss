@@ -1,0 +1,24 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/typography";
+@import "../../styles/variables/mixins";
+
+.grid {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  grid-template-areas: "main side";
+}
+
+.hero {
+  background-image: url("/images/culture/blur-img/culture-cover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: $neutral-800;
+  height: 100vh;
+  min-height: 40rem;
+}
+
+.extracontent {
+  height: 300px;
+  background-color: #ffee00;
+}
