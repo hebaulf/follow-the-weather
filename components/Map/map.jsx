@@ -13,12 +13,13 @@ import { getWeather } from '../../pages/api/weather-now'
 /*components*/
 import style from './map.module.scss'
 //import SideBar from '../WeatherPageLayout/Sidebar/Sidebar'
-//import Grid from '../WeatherPageLayout/Grid/grid'
+import Grid from '../WeatherPageLayout/Grid/grid'
+
+
 import LOCATIONS from '../../data/locations.json'
 
 const MAPBOX_TOKEN = "pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
 const MAP_STYLE = "mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
-const MAP_PLACE_URL = ""
 
 const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
   // MAP VIEWPORT
@@ -27,8 +28,9 @@ const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
     (newViewport) =>  {
         setViewport(newViewport);
     },
-    []
+    [setViewport]
   );
+
   const handleGeocoderViewportChange = useCallback(
     (newViewport) => {
       const geocoderDefaultOverrides = { transitionDuration: 1000 };
@@ -37,7 +39,7 @@ const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
         ...geocoderDefaultOverrides
       });
     },
-    []
+    [handleViewportChange]
   );
 
   // PlACE DATA
@@ -81,8 +83,9 @@ const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
   // ACTIVITY MARKERS
   const pinSize = (6 * 1.5);
   const pinStyle = {
-    width: `${pinSize}px`,
-    height: `${pinSize}px`
+   
+    color: 'red',
+    height: '30px,'
   };
 
   const activityMarkers = points?.map(
@@ -99,63 +102,47 @@ const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
     )
   );
 
+
+  const locParams = {
+    country: "is"
+  }
   // PLACES MARKERS - LOCATIONS - WEATHER
-  const weatherMarkers = weatherData?.map(
+  /* const weatherMarkers = weatherData?.map(
     (data, i) => (
-      <Marker></Marker>
+      <Marker
+        key={i}
+        latitude={data.coord.lat}
+        longitude={data.coord.LinearInterpolator}
+      >
+        Weather
+      </Marker>
     )
-  )
+  ) */
 
   
   return (
-    <Grid >
       <ReactMapGL
         ref={mapRef}
+        mapStyle="mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
         {...viewport}
         width='100%'
         height='100%'
-        mapStyle="mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
-        mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
         onViewportChange={handleViewportChange}
-        attributionControl={false}
-        marker={true}
+        mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
       >
-        <Geocoder
+        {/* <Geocoder
           mapRef={mapRef}
-          containerRef={geocoderContainerRef}
-          onViewportChange={handleViewportChange}
+          containerRef={geoCoder}
+          onViewportChange={handleGeocoderViewportChange}
           mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
-          position='bottom-right'
-          placeholder="Search for city"
-          zoom="14"
-          value=""
+          placeholder="Search for a destination"
           queryParams={locParams}
-        />
+        /> */}
 
         {activityMarkers}
        
       </ReactMapGL>
-    </Grid>
   )
 }
 
 export default Map
-
-
-
-  
-  
-
-  
- * /
-
- /*  const ActivityMarker = {points.map(point => (
-          <LocationMarker
-            key={point.id}
-            pinStyle={pinStyle}
-            longitude={parseFloat(point.geometry.coordinates[1])} 
-            latitude={parseFloat(point.geometry.coordinates[0])} 
-            offsetLeft={`${-pinSize}`/ 2}
-            offsetTop={`${-pinSize}` / 2}
-          />
-        ))} */

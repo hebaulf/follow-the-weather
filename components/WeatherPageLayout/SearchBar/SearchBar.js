@@ -1,4 +1,4 @@
-import style from './'
+import style from './searchBar.module.scss'
 
 export const Searchbar = ({ geoCoder }) => {
   return (
