@@ -1,0 +1,12 @@
+@import '../../styles/variables/colors';
+@import '../../styles/variables/typography';
+@import '../../styles/variables/mixins';
+
+.markerContainer {
+  padding: 4px;
+  position: relative;
+
+  svg {
+    display: block;
+  }
+}

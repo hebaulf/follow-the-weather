@@ -1,0 +1,1185 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ísafjörður",
+        "Region": "Westfjords",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -23.144777,
+          66.067261
+        ],
+        "type": "Point"
+      },
+      "id": "05c3a3f1c4c037c5dcfba9386a059629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hellissandur",
+        "Region": "Western Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -23.883822,
+          64.916943
+        ],
+        "type": "Point"
+      },
+      "id": "05f925df6192d7bdc27c45377e396f7c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Varmahlíð",
+        "Region": "Northwestern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -19.448329,
+          65.552704
+        ],
+        "type": "Point"
+      },
+      "id": "075d58912fe6ee0e3b03a60352917fbd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Búðardalur",
+        "Region": "Western Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -21.766518,
+          65.109007
+        ],
+        "type": "Point"
+      },
+      "id": "09aedda1bf1d9ff1dee320ecbf9c011e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hofsós",
+        "Region": "Northwestern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -19.413602,
+          65.898188
+        ],
+        "type": "Point"
+      },
+      "id": "09f16ba084ff538a93f94fa93e52f529"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Reyðarfjörður",
+        "Region": "Eastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -14.218427,
+          65.033568
+        ],
+        "type": "Point"
+      },
+      "id": "0b16487863396ba7df630a92de7b5486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Höfn",
+        "Region": "Eastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -15.205911,
+          64.252472
+        ],
+        "type": "Point"
+      },
+      "id": "0d06768364cb9dce82eb6aaf50ab0463"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bolungarvík",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -23.252414,
+          66.15783
+        ],
+        "type": "Point"
+      },
+      "id": "0dbe26ba049fce481852d88a02fe4968"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Reykjahlíð",
+        "Region": "Northeastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -16.905561,
+          65.642218
+        ],
+        "type": "Point"
+      },
+      "id": "0fcc4fcef28e86826beaa34ea4dfcaa1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Egilsstaðir",
+        "Region": "Eastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -14.395275,
+          65.263981
+        ],
+        "type": "Point"
+      },
+      "id": "10ede135b2d012c4c4c7394ef35e1038"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hvolsvöllur",
+        "Region": "Southern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -20.225377,
+          63.751623
+        ],
+        "type": "Point"
+      },
+      "id": "1aca5fd71738ec4667534d18817e964c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Reykjavík",
+        "Region": "Capital Area",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -21.859122,
+          64.130733
+        ],
+        "type": "Point"
+      },
+      "id": "1c406976cda107ac69babfda4c7d190a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Flateyri",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -23.512891,
+          66.050062
+        ],
+        "type": "Point"
+      },
+      "id": "1c667f2536f1fa3c93526b4d3784ba5e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ólafsfjörður",
+        "Region": "Northeastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -18.6514,
+          66.072139
+        ],
+        "type": "Point"
+      },
+      "id": "1ec2fcf16f2149be7a137f0989b5319d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Akureyri",
+        "Region": "Northeastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -18.112236,
+          65.683013
+        ],
+        "type": "Point"
+      },
+      "id": "1f8468c3d47145315d6999a63c84a8d6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Keflavík",
+        "Region": "Southern Peninsula",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -22.565858,
+          64.002761
+        ],
+        "type": "Point"
+      },
+      "id": "1fa1f81b302f315e9d58e21462be4213"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hafnir",
+        "Region": "Southern Peninsula",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -22.685227,
+          63.933556
+        ],
+        "type": "Point"
+      },
+      "id": "20e080eb07d4a1371091d733fbc1b076"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Akranes",
+        "Region": "Western Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -22.066374,
+          64.318825
+        ],
+        "type": "Point"
+      },
+      "id": "247182b30758bf21ea89a1302a02133a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Þingeyri",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -23.489938,
+          65.876681
+        ],
+        "type": "Point"
+      },
+      "id": "2c4a688d394673ffaec301dbf852ba81"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Reykhólar",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -22.201381,
+          65.447723
+        ],
+        "type": "Point"
+      },
+      "id": "2cc71018b8415ff9b8c42d4ba721bf3a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bíldudalur",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -23.604854,
+          65.682888
+        ],
+        "type": "Point"
+      },
+      "id": "2d43eca43096e78f600b3fbf0f79818f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Patreksfjörður",
+        "Region": "Westfjords",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -23.99015,
+          65.595661
+        ],
+        "type": "Point"
+      },
+      "id": "300b9f158d95ea0239944612831f2a8d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Garður"
+      },
+      "geometry": {
+        "coordinates": [
+          -22.655128,
+          64.070764
+        ],
+        "type": "Point"
+      },
+      "id": "3209221831a24d6e141f891a36ba4833"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Vopnafjörður",
+        "Region": "Eastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -14.829229,
+          65.754464
+        ],
+        "type": "Point"
+      },
+      "id": "343299d70511602e61de4123bade2a97"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Grímsey"
+      },
+      "geometry": {
+        "coordinates": [
+          -18.013259,
+          66.538541
+        ],
+        "type": "Point"
+      },
+      "id": "3b0a3b99bb439e1bcd1afa530ca094d9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sauðárkrókur",
+        "Region": "Northwestern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -19.643638,
+          65.743716
+        ],
+        "type": "Point"
+      },
+      "id": "3bb114907ebcc28b82158bad870a7a1f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Húsavík",
+        "Region": "Northeastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -17.342131,
+          66.044207
+        ],
+        "type": "Point"
+      },
+      "id": "418ba80e19e8c230765544a93a6415ce"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Þórshöfn",
+        "Region": "Northeastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -15.335475,
+          66.19893
+        ],
+        "type": "Point"
+      },
+      "id": "4e453ba71b4d054f654c01d0f3b072f2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Laugar",
+        "Region": "Northeastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -17.362369,
+          65.721583
+        ],
+        "type": "Point"
+      },
+      "id": "4e50098ca0c06c5c4f96ab1bfb45ecd1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bakkafjörður",
+        "Region": "Northeastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -14.80381,
+          66.036443
+        ],
+        "type": "Point"
+      },
+      "id": "526874c2b0d4d01ed3c8c37f4a38ff9d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Flúðir",
+        "Region": "Southern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -20.323422,
+          64.134715
+        ],
+        "type": "Point"
+      },
+      "id": "5876b0d523a8500c548a8300c24af8b5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Selfoss",
+        "Region": "Southern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -20.999708,
+          63.933143
+        ],
+        "type": "Point"
+      },
+      "id": "5ad3bed92c6c9aedc9251433ac773295"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Njarðvík",
+        "Region": "Southern Peninsula",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -22.525129,
+          63.978626
+        ],
+        "type": "Point"
+      },
+      "id": "5b7c1d427fa50c2add0c48c9ca23bc31"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mosfellsbær",
+        "Region": "Capital Area",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.692692,
+          64.166235
+        ],
+        "type": "Point"
+      },
+      "id": "5c8d5cfc1551cdcd9f391732af1f1eed"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hnífsdalur",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -23.122004,
+          66.109675
+        ],
+        "type": "Point"
+      },
+      "id": "5fec0f3c8666c37be60aeea80bfa5359"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kópasker",
+        "Region": "Northeastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -16.445675,
+          66.301113
+        ],
+        "type": "Point"
+      },
+      "id": "64b8472c2cafb7cfa868b570fb430968"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Stokkseyri",
+        "Region": "Southern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.055227,
+          63.837005
+        ],
+        "type": "Point"
+      },
+      "id": "6a3595dcff331913684e86e68585dad5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Raufarhöfn",
+        "Region": "Northeastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -15.948195,
+          66.452743
+        ],
+        "type": "Point"
+      },
+      "id": "6aaca0829e0a2f4603183f15173336ac"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Grenivík",
+        "Region": "Northeastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -18.181381,
+          65.94835
+        ],
+        "type": "Point"
+      },
+      "id": "6b3bb8ffea95ccfa7e32a6c7bd76351b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Fáskrúðsfjörður",
+        "Region": "Eastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -14.011705,
+          64.9299
+        ],
+        "type": "Point"
+      },
+      "id": "748757ff7469a302f32aa56bd4093ba5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Stykkishólmur",
+        "Region": "Western Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -22.731038,
+          65.074402
+        ],
+        "type": "Point"
+      },
+      "id": "79098fd1ffe5014072bac6be69f1d388"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hvanneyri",
+        "Region": "Western Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.76345,
+          64.563935
+        ],
+        "type": "Point"
+      },
+      "id": "80499746bbd8065513a5d7269f5cfbb6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Blönduós",
+        "Region": "Northwestern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -20.287357,
+          65.660726
+        ],
+        "type": "Point"
+      },
+      "id": "85534651e10dc89943f7b75f684df7a9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Dalvík",
+        "Region": "Northeastern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -18.53265,
+          65.971914
+        ],
+        "type": "Point"
+      },
+      "id": "88e99fb8ee012f72ca8d11688f9db4fc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ólafsvík",
+        "Region": "Western Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -23.706926,
+          64.894316
+        ],
+        "type": "Point"
+      },
+      "id": "8d5bae1f3c979bac45d916d0d38a9ad4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Reykholt",
+        "Region": "Western Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.291055,
+          64.664507
+        ],
+        "type": "Point"
+      },
+      "id": "8d75a53fd97d57d5622d8e55cf392515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Vík",
+        "Region": "Southern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -19.005794,
+          63.418918
+        ],
+        "type": "Point"
+      },
+      "id": "9384276b55f27d582251bc9d90f61f39"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Súðavík",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -22.990109,
+          66.031749
+        ],
+        "type": "Point"
+      },
+      "id": "9463626cc8e2c91599e3e31e9e445e11"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tálknafjörður",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -23.824743,
+          65.626971
+        ],
+        "type": "Point"
+      },
+      "id": "9861752e4cadf4ac4bca470886c15f7e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hella",
+        "Region": "Southern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -20.396549,
+          63.836443
+        ],
+        "type": "Point"
+      },
+      "id": "99a4f48c4b78a3e0828eac86ef237a59"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hólmavík",
+        "Region": "Westfjords",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -21.678965,
+          65.703264
+        ],
+        "type": "Point"
+      },
+      "id": "9aa5535c88770a7568feddc3849c60ea"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Laugarvatn",
+        "Region": "Southern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -20.733057,
+          64.214541
+        ],
+        "type": "Point"
+      },
+      "id": "9e60363767f5daf24b0f37567b84bf87"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Skagaströnd",
+        "Region": "Northwestern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -20.307294,
+          65.824565
+        ],
+        "type": "Point"
+      },
+      "id": "a0e2681e7f6074047a4d027027c8b8de"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Skógar",
+        "Region": "Southern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -19.498448,
+          63.528225
+        ],
+        "type": "Point"
+      },
+      "id": "ab4598149a0765c01724f4434dd8ee92"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Drangsnes",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.441606,
+          65.689336
+        ],
+        "type": "Point"
+      },
+      "id": "af9693eff34c897cb1af7f8b87dba3da"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kirkjubæjarklaustur",
+        "Level": 1,
+        "Region": "Southern Region"
+      },
+      "geometry": {
+        "coordinates": [
+          -18.04962,
+          63.790449
+        ],
+        "type": "Point"
+      },
+      "id": "b495654be81ca8381e5b62c67871c956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Suðureyri",
+        "Region": "Westfjords",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -23.52713,
+          66.129456
+        ],
+        "type": "Point"
+      },
+      "id": "b712b9a5d272a147f95c818923e86b5f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Þorlákshöfn",
+        "Region": "Southern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.383791,
+          63.854777
+        ],
+        "type": "Point"
+      },
+      "id": "bade4e0900f169cbc21eef326674168f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Djúpivogur",
+        "Region": "Eastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -14.28931,
+          64.657267
+        ],
+        "type": "Point"
+      },
+      "id": "c08e4b74c1d72c6097bceb416452a0a9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Grindavík",
+        "Region": "Southern Peninsula",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -22.43309,
+          63.842341
+        ],
+        "type": "Point"
+      },
+      "id": "c1039eabb35f22d93acc47b1b22b8008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hvammstangi",
+        "Region": "Northwestern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -20.941533,
+          65.398142
+        ],
+        "type": "Point"
+      },
+      "id": "c782ae639688ebc71b42aa4efc37db35"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Seyðisfjörður",
+        "Region": "Eastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -14.002938,
+          65.262437
+        ],
+        "type": "Point"
+      },
+      "id": "c7991fac0e8c5d48c75ed187f1f9a1f3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Neskaupstaður",
+        "Region": "Eastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -13.693604,
+          65.14716
+        ],
+        "type": "Point"
+      },
+      "id": "cb42f9d1e62c6864b11211af782469f7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Grundarfjörður",
+        "Region": "Western Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -23.260096,
+          64.923351
+        ],
+        "type": "Point"
+      },
+      "id": "d289de65215107455e3cbcafdf4c7870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hafnarfjörður",
+        "Region": "Capital Area",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.960618,
+          64.06285
+        ],
+        "type": "Point"
+      },
+      "id": "d3c16ace67d8abe990ca8671f1ce2b05"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kópavogur",
+        "Region": "Capital Area",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.868064,
+          64.101909
+        ],
+        "type": "Point"
+      },
+      "id": "dffcc2f5ac404358d6805f030d95a20f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Borðeyri",
+        "Region": "Northwestern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.096652,
+          65.208664
+        ],
+        "type": "Point"
+      },
+      "id": "e385debe8894de03188c2456620f6185"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Borgarnes",
+        "Region": "Western Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -21.908156,
+          64.548767
+        ],
+        "type": "Point"
+      },
+      "id": "e501d063b28309e290e2a6597b739b27"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bifröst",
+        "Region": "Western Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.551536,
+          64.766921
+        ],
+        "type": "Point"
+      },
+      "id": "e62fca50221b7e64dffc827db77c80ac"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Eskifjörður",
+        "Region": "Eastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -14.0185,
+          65.073358
+        ],
+        "type": "Point"
+      },
+      "id": "ed01fed40bafafe33a6c6fc4423907a4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Eyrarbakki",
+        "Region": "Southern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.148118,
+          63.862718
+        ],
+        "type": "Point"
+      },
+      "id": "f09f581712706116483e9abf4b26feac"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Vestmannaeyjar",
+        "Region": "Southern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -20.278852,
+          63.437677
+        ],
+        "type": "Point"
+      },
+      "id": "f3ded7dbb37a6ad46e595fbcdcbcd9c4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Siglufjörður",
+        "Region": "Northeastern Region",
+        "Level": 1
+      },
+      "geometry": {
+        "coordinates": [
+          -18.9106,
+          66.149587
+        ],
+        "type": "Point"
+      },
+      "id": "f740d653e52dc4058cd13c8211039755"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hveragerði",
+        "Region": "Southern Region",
+        "Level": 2
+      },
+      "geometry": {
+        "coordinates": [
+          -21.18736,
+          64.000753
+        ],
+        "type": "Point"
+      },
+      "id": "fb9260d5d6e8bbe40db8461c85f03429"
+    }
+  ],
+  "type": "FeatureCollection"
+}
