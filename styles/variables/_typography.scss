@@ -1,6 +1,73 @@
+@font-face {
+  font-family: "FreightBig Medium";
+  src: url("/fonts/Freight/FreightBigProMedium-Regular.eot");
+  src: url("/fonts/Freight/FreightBigProMedium-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/Freight/FreightBigProMedium-Regular.woff2") format("woff2"),
+    url("/fonts/Freight/FreightBigProMedium-Regular.woff") format("woff"),
+    url("/fonts/Freight/FreightBigProMedium-Regular.ttf") format("truetype"),
+    url("/fonts/Freight/FreightBigProMedium-Regular.svg#FreightBigProMedium-Regular")
+      format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FreightBig Bold";
+  src: url("/fonts/Freight/FreightBigProBold-Regular.eot");
+  src: url("/fonts/Freight/FreightBigProBold-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/Freight/FreightBigProBold-Regular.woff2") format("woff2"),
+    url("/fonts/Freight/FreightBigProBold-Regular.woff") format("woff"),
+    url("/fonts/Freight/FreightBigProBold-Regular.ttf") format("truetype"),
+    url("/fonts/Freight/FreightBigProBold-Regular.svg#FreightBigProBold-Regular")
+      format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apercu Bold";
+  src: url("/fonts/Apercu/Apercu-Bold.eot");
+  src: url("/fonts/Apercu/Apercu-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Apercu/Apercu-Bold.woff") format("woff"),
+    url("/fonts/Apercu/Apercu-Bold.ttf") format("truetype"),
+    url("/fonts/Apercu/Apercu-Bold.svg#Apercu-Bold") format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apercu Regular";
+  src: url("/fonts/Apercu/Apercu-Regular.eot");
+  src: url("/fonts/Apercu/Apercu-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/Apercu/Apercu-Regular.woff") format("woff"),
+    url("/fonts/Apercu/Apercu-Regular.ttf") format("truetype"),
+    url("/fonts/Apercu/Apercu-Regular.svg#Apercu-Regular") format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apercu Light";
+  src: url("/fonts/Apercu/Apercu-Light.eot");
+  src: url("/fonts/Apercu/Apercu-Light.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Apercu/Apercu-Light.woff") format("woff"),
+    url("/fonts/Apercu/Apercu-Light.ttf") format("truetype"),
+    url("/fonts/Apercu/Apercu-Light.svg#Apercu-Light") format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
 /********** Font **********/
-$text-heading: "Noto Serif Display", serif;
-$text-body: "Lato", sans-serif;
+$text-heading-serif: "FreightBig Bold", serif;
+$text-heading-serif-Medium: "FreightBig Medium", serif;
+$text-heading-sans: "Apercu", sans-serif;
+$text-body-light: "Apercu Light", sans-serif;
+$text-body-Regular: "Apercu Regular", sans-serif;
+$text-body: "Apercu Light", sans-serif;
+$text-body-bold: "Apercu Bold", sans-serif;
 
 /********** Base **********/
 $text-base-size: 10px;
@@ -36,7 +103,7 @@ $font-size-p-sm--min: 1rem;
 
 /********** LINE HEIGHT **********/
 $text-line-height__heading: 1.6;
-$text-line-height__body: 1.3;
+$text-line-height__body: 1.4;
 
 /********** VIEW WIDTHS **********/
 $view-width-min: 32rem;

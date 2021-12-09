@@ -1,4 +1,4 @@
-import { ScrollArea } from "@radix-ui/react-scroll-area";
+import * as ScrollArea from "@radix-ui/react-scroll-area";
 import * as Slider from "@radix-ui/react-slider";
 import { stations } from "./stations";
 import styles from "./dropdown.module.scss";

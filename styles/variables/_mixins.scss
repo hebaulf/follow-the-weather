@@ -23,7 +23,6 @@
     $font-size-display-lg--min,
     $font-size-display-lg--max
   );
-  font-weight: 600;
 }
 
 @mixin heading-1 {
@@ -33,7 +32,6 @@
     $font-size-h1--min,
     $font-size-h1--max
   );
-  font-weight: 400;
 }
 
 @mixin heading-2 {
@@ -43,7 +41,6 @@
     $font-size-h2--min,
     $font-size-h2--max
   );
-  font-weight: 400;
 }
 
 @mixin heading-3 {
@@ -53,7 +50,6 @@
     $font-size-h3--min,
     $font-size-h3--max
   );
-  font-weight: 400;
 }
 
 @mixin heading-4 {
@@ -63,7 +59,6 @@
     $font-size-h4--min,
     $font-size-h4--max
   );
-  font-weight: 300;
 }
 
 @mixin text-base {
@@ -73,7 +68,6 @@
     $font-size-p--min,
     $font-size-p--max
   );
-  font-weight: 300;
 }
 
 @mixin text-display {
@@ -83,7 +77,6 @@
     $font-size-p-sm--min,
     $font-size-p-sm--max
   );
-  font-weight: 300;
 }
 
 @mixin text-pretitle {
@@ -93,7 +86,6 @@
     $font-size-p-sm--min,
     $font-size-p-sm--max
   );
-  font-weight: 300;
 }
 
 @mixin text-lg {
@@ -103,7 +95,6 @@
     $font-size-p-sm--min,
     $font-size-p-sm--max
   );
-  font-weight: 300;
 }
 
 @mixin text-sm {
@@ -113,5 +104,4 @@
     $font-size-p-sm--min,
     $font-size-p-sm--max
   );
-  font-weight: 300;
 }

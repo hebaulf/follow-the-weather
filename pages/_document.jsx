@@ -5,10 +5,14 @@ export default class CustomDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <meta property="custom" content="yolo" />
-                    <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Noto+Serif+Display:wght@300;400;500;700&display=swap" rel="stylesheet" />
+                    {/* Favicons */}
+                    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+                    <link rel="manifest" href="/favicons/site.webmanifest" />
+                    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#000000" />
+                    <meta name="msapplication-TileColor" content="#000000" />
+                    <meta name="theme-color" content="#000000" />
                 </Head>
                 <body>
                     <Main />

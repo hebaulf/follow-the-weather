@@ -1,0 +1,37 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/typography";
+@import "../../styles/variables/mixins";
+
+.hero {
+  background-image: url("/images/months/months-cover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 8rem);
+  min-height: 40rem;
+}
+
+.intro {
+  transform: translateY(-30%);
+
+  p {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 60rem;
+  }
+}
+
+.monthitem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
+
+  .image,
+  .text {
+    width: 50%;
+  }
+}
