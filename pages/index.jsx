@@ -15,7 +15,7 @@ const Home = () => {
     <Layout>
       <div className={style.content}>
         <div className={style.icon}>
-          <Image src="/icons/weather-icons/weathericon.svg" alt="decorative weather icon" height={330} width={330} />
+          <Image src="/icons/weather-icons/light-cloud.svg" alt="decorative weather icon" height={330} width={330} />
         </div>
         <h3>Follow</h3>
         <div className={style.pushedcontent}>
