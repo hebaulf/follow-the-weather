@@ -3,8 +3,8 @@
 @import "../../styles/variables/mixins";
 
 .hero {
-  background-image: url("/images/months/months-cover.jpg"),
-    url("/images/months/blur-img/months-cover.jpg");
+  background-image: url("/images/culture/culture-cover.jpg"),
+    url("/images/culture/blur-img/culture-cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -15,7 +15,7 @@
 
 .listwrap {
   background-image: url("/svg/background-pattern.svg");
-  // background-size: contain;
+  background-size: contain;
 }
 
 .list {
@@ -68,23 +68,6 @@
 
     .paragraph {
       margin-bottom: 2rem;
-    }
-  }
-
-  .info {
-    border-left: 2px solid $secondary-500;
-    padding: 0 1rem;
-
-    .iteminfo {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    p {
-      line-height: 2;
     }
   }
 }

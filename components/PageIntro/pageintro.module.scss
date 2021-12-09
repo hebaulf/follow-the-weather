@@ -1,0 +1,40 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/typography";
+@import "../../styles/variables/mixins";
+
+.intro {
+  transform: translateY(-30%);
+
+  .heading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 15%;
+    margin: 0 8%;
+    margin-bottom: 3rem;
+
+    .arrow {
+      position: absolute;
+      left: 0;
+      width: 15%;
+      padding-right: 1.5rem;
+    }
+
+    h1 {
+      span {
+        display: block;
+        position: absolute;
+        top: -3rem;
+        left: 0;
+        @include heading-2;
+        font-family: $text-body-light;
+      }
+    }
+  }
+
+  p {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 60rem;
+  }
+}

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import style from '../styles/index.module.scss';
 import Layout from '../components/Layout/Layout';
+import PageLink from '../components/PageLink/pagelink';
 import { motion } from 'framer-motion';
 import { navLinks } from '../utils/navLinks';
 
@@ -31,22 +32,12 @@ const Home = () => {
             {navLinks.map((link, index) => {
               return (
                 <motion.div
+                  className={style.linkwrap}
                   key={index}
                   initial={animateFrom}
                   animate={animateTo} >
                   <p className={style.linktext}>{link.text}</p>
-                  <Link href={link.path} passHref>
-                    <a className={style.link}>
-                      <p>{link.name}</p>
-                      <Image
-                        className={style.icon}
-                        src="/icons/circle-arrow.svg"
-                        alt="weather icon sun and clouds"
-                        height={48}
-                        width={71}
-                      />
-                    </a>
-                  </Link>
+                  <PageLink href={link.path} text={link.name} />
                 </motion.div>
               );
             })}

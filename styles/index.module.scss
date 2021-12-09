@@ -69,14 +69,11 @@
   padding-bottom: 5rem;
   gap: 2rem;
 
-  .linktext {
-    margin-bottom: 20px;
+  .linkwrap {
+    width: 33%;
   }
 
-  .link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 13rem;
+  .linktext {
+    margin-bottom: 20px;
   }
 }
