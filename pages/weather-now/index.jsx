@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -10,36 +10,46 @@ import Sidebar from '../../components/WeatherPageLayout/Sidebar/sidebar';
 
 import { activityCategories } from '../../utils/activityCategories';
 
+const IntroText = (props) => {
+  return (
+    <div className={style.intro}>
+      <h5 className={style.pretitle}>{props.pretitle}</h5>
+      <h1 className={style.title}>{props.title}</h1>
+    </div>
+  )
+}
+
 const WeatherNow = () => {
- 
+
   return (
     <Layout>
       <Grid>
         <Content>
-          <div className={style.hero} style={{ backgroundImage: `url("/images/culture/culture-cover.jpg")` }}>
-            <div className={style.intro}>
-              <h4 className={style.pretitle}></h4>
-              <h1 className={style.title}></h1>
-            </div>
+          <div className={style.hero} style={{ backgroundImage: `url("/images/today/weather-now.jpg")` }}>
+            <IntroText 
+              pretitle="The Weather Now" 
+              title="It’s unusually nice in Stykkishólmur today" 
+            />
+            <Link href="#toDo" passHref><a className={style.button}>Things to do</a></Link>
           </div>
-          <div className={style.extracontent}>
-            <div className={style.intro}>
-              <h4 className={style.pretitle}></h4>
-              <h1 className={style.title}></h1>
-            </div>
+          <div id="toDo" className={style.belowthefold}>
+            <IntroText 
+              pretitle="Things to do in Stykkishólmur" 
+              title="Looking at the weather today, we recommend..." 
+            />
             <div className={style.activities}>
-              {activityCategories.map((activity, index) => {
+              {activityCategories.map((category, index) => {
                 <div key={index} className={style.activityitem}>
                   <Image 
-                    src={`/images/months/${activity.image}`}
-                    alt={activity.title} 
+                    src={`/images/activities/${category.image}`}
+                    alt={category.title} 
                     height={540} 
                     width={650} 
-                    blurDataURL={`/images/months/blur-img/${activity.image}`}
+                    blurDataURL={`/images/activities/blur-img/${category.image}`}
                     placeholder="blur" 
                   />
-                  <h4>{activity.title}</h4>
-                  <p>{activity.shortdescription}</p>
+                  <h4>{category.name}</h4>
+                  <p>{category.shortdescription}</p>
                   <Link href={`/weather-now`} passHref><a className={style.morebutton}>View More</a></Link>
                 </div>
               })}

@@ -17,6 +17,7 @@ body {
   font-size: $text-base-size;
   font-weight: 400;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -68,6 +69,9 @@ h3 {
 }
 h4 {
   @include heading-4;
+}
+h5 {
+  @include heading-5;
 }
 p {
   font-family: $text-body;

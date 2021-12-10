@@ -61,6 +61,15 @@
   );
 }
 
+@mixin heading-5 {
+  @include fluid-type(
+    $view-width-min,
+    $view-width-max,
+    $font-size-h5--min,
+    $font-size-h5--max
+  );
+}
+
 @mixin text-base {
   @include fluid-type(
     $view-width-min,
