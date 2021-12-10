@@ -1,48 +1,51 @@
-## Folder structure for components
+# Follow the Weather
 
-Components
+An activity based weather app with information on the culture of weather in Iceland and how to prepair for it when travelling.
+> Be mentally prepared for the <br>
+> ever changing icelandic weather.<br>
+<br>
 
-- atoms
-- layout
-- blocks
-- sections
+## Links to elements of our project:
+### [Live site](https://follow-the-weather.vercel.app/)
+### [Design Prototype](https://www.figma.com/proto/NnNlswtGi4FQGvWR2n6klT/No-Bad-Weather---Design?page-id=0%3A1&node-id=445%3A8918&viewport=241%2C48%2C0.06&scaling=scale-down&starting-point-node-id=445%3A8918)
+### [Design in Figma](https://www.figma.com/file/NnNlswtGi4FQGvWR2n6klT/No-Bad-Weather---Design?node-id=634%3A9258)
+### [Miro Board (Design Sprint)](https://miro.com/app/board/o9J_ljIvdc0=/)
+### [The Presentation](https://www.figma.com/proto/NnNlswtGi4FQGvWR2n6klT/No-Bad-Weather---Design?page-id=112%3A1678&node-id=634%3A9258&viewport=241%2C48%2C0.16&scaling=min-zoom&starting-point-node-id=634%3A9258)
+### [Asana Board](https://app.asana.com/0/1201403990683906/board)
 
-Layout
 
-- PageWrapper
-  -- MainContent
-  -- Sidebar
+<img width='100%' src='https://raw.githubusercontent.com/hebaulf/follow-the-weather/main/public/images/culture/the-light.jpg'>
 
-Page Templates
+## The team
+We were a mix of people with different skills.
+- **Designers** - Bíbí & Ása (with creative input from Arna Vala)
+- **Coders** - Arna Vala , Heba & Tristan
+<br><br>
+ 
+## Project Management
+We used Agile project management methods
+- Had status meetings every day
+- Used Slack for communication
+- Asana for managing tasks
+<br><br>
 
-## Home
+## Design Sprint
+We started the project with a 5 day design sprint which helped a lot to understand what we wanted to portray.  
+As we worked through the week the focus of the project shifted further and futher away from our initial idea of having a clothing based weather application.  
+In the end we thought it would not give the user enough value.  
+Our focus shifted over to getting people prepared for the ever changing weather, by teaching them how Icelanders follow the weather, as well as helping them find activities accordingly.
 
-## Weather Now
+## Coding
+### Tech Stack
+- Visual Studio Code
+- Git / Github
+- Next.js - for react framework
+- Vercel - for hosting
+- Radix - component library
+- Sass components
 
-Main View
+### API's
+- Open Weather API
+- Mapbox API
+- Visit Iceland open content API
 
-HeaderSection
-
-- Full Width Image
-- Page Title block
-  -- Headline + Paragraph
-  -- Button (to activities in this location based on weather)
-- 'Fun facts' - what to wear, weather lingo etc.
-- Recommended activities block
-  -- Section headline
-  -- List of activity cards: Image, Title, Short Description, Button (on click open up activity template page)
-
-## City page with weather
-
-- shows city name
-- activity in the region
-  REGION:CATEGORY(RECREATION):SUBCATEGORY:SERVICE_PROVIDER
-- When you click 'weather now', route to page which queries your current location.
-- Current location page displays the weather info now in sidebar and in main view there comes general
-  info about the weather in your location, and then a suggested list of activity types in the recreation category based on the current weather.
-- Click on a type of activity from list 'hiking' =>
-- open page 'recreation template' - displays general info on the type of activity and a list of service provider in your region based on the current
-- Region(City) shows a list of subcategorys in the category:recreation
-- Click on a subcategory(type of activity, e.g. hiking) =>
-- sent to a page 'activity template (slug = activity name)'
-  location:id (id=lat/lon), locatin:id/thingstodo/hiking/hiking:id
