@@ -35,6 +35,7 @@ We started the project with a 5 day design sprint which helped a lot to understa
 As we worked through the week the focus of the project shifted further and futher away from our initial idea of having a clothing based weather application.  
 In the end we thought it would not give the user enough value.  
 Our focus shifted over to getting people prepared for the ever changing weather, by teaching them how Icelanders follow the weather, as well as helping them find activities accordingly.
+<br><br>
 
 ## Coding
 ### Tech Stack
