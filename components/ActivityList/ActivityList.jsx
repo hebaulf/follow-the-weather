@@ -11,21 +11,20 @@ const ActivityList = () => {
 
   const activityState = ActivityState.useGlobalState(); // with hooks
   const activities = activityState.getActivitiesSelectedCategory();
-  
+
   return (
     <div className={style.list}>
       <h4 className={style.list__title}>Things to do</h4>
       <div className={style.form}>
-        <h4>Types of Activities</h4>
-        <button value='swimming' onClick={() => ActivityState.accessGlobalState().setSelectedCategory('swimming')}>Swimming Pools</button>
-        <button value='hiking' onClick={() => ActivityState.accessGlobalState().setSelectedCategory('hiking')}>Hiking Tours</button>
-        <button value='horse riding' onClick={() => ActivityState.accessGlobalState().setSelectedCategory('horse-riding')}>Geothermal Baths</button>
+        <button className={style.buttons} value='swimming' onClick={() => ActivityState.accessGlobalState().setSelectedCategory('swimming')}>Swimming Pools</button>
+        <button className={style.buttons} value='hiking' onClick={() => ActivityState.accessGlobalState().setSelectedCategory('hiking')}>Hiking Tours</button>
+        <button className={style.buttons} value='horse riding' onClick={() => ActivityState.accessGlobalState().setSelectedCategory('horse-riding')}>Geothermal Baths</button>
       </div>
       <div className={style.list} >
         {activities.map((activity, id) =>
           <ActivityCard key={id} activity={activity} />
         )};
-      </div> 
+      </div>
     </div>
   )
 }

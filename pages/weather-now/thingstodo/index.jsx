@@ -11,6 +11,7 @@ import Map from '../../../components/Map/map';
 import { MainCard } from '../../../components/WeatherPageLayout/Weather/MainCard/MainCard';
 import WeatherWidget from '../../../components/WeatherPageLayout/Weather/weather';
 import { getWeather } from '../../api/data';
+import ActivityList from '../../../components/ActivityList/ActivityList';
 
 
 const WeatherNow = () => {
@@ -43,7 +44,7 @@ const WeatherNow = () => {
             />
           </Content>
           <SideBar geoCoder={geocoderContainerRef}>
-            <WeatherWidget weatherData={getWeather} />
+            <ActivityList />
           </SideBar>
         </Grid>
       </WeatherContext>
