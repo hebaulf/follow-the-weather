@@ -4,6 +4,8 @@ export const MapboxContext = createContext();
 
 const MapboxContextProvider = ({ children }) => {
   const [viewport, setViewport] = useState({
+    width: '100%',
+    height: '100%',
     zoom: 6,
     longitude: -18.5,
     latitude: 65,

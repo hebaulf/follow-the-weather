@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useContext, useCallback } from 'react'
+import { useState, useRef, useEffect, useContext, useMemo, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import ReactMapGL, { Marker, GeolocateControl } from 'react-map-gl'
 import Geocoder from 'react-map-gl-geocoder'
@@ -9,46 +9,21 @@ import mapboxgl from 'mapbox-gl'
 import * as ActivityState from '../../state/activityState'
 import { WeatherContext } from '../../state/WeatherContext'
 import { MapboxContext } from '../../state/MapboxContext'
-import { getWeather } from '../../pages/api/weather-now'
-/*components*/
+import { getWeather } from '../../pages/api/data'
 import style from './map.module.scss'
-//import SideBar from '../WeatherPageLayout/Sidebar/Sidebar'
-import Grid from '../WeatherPageLayout/Grid/grid'
 
 
 import LOCATIONS from '../../data/locations.json'
 
-const MAPBOX_TOKEN = "pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
-const MAP_STYLE = "mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
-
-const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
-  // MAP VIEWPORT
+const Map = ({ mapRef, geoCoder }) => {
+  const { setWeatherData } = useContext(WeatherContext);
   const { viewport, setViewport } = useContext(MapboxContext)
-  const handleViewportChange = useCallback(
-    (newViewport) =>  {
-        setViewport(newViewport);
-    },
-    [setViewport]
-  );
+  const [city, setCity] = useState("")
 
-  const handleGeocoderViewportChange = useCallback(
-    (newViewport) => {
-      const geocoderDefaultOverrides = { transitionDuration: 1000 };
-      return handleViewportChange({
-        ...newViewport,
-        ...geocoderDefaultOverrides
-      });
-    },
-    [handleViewportChange]
-  );
-
-  // PlACE DATA
-  //set variables with states to render activities and selected cat if within viewport
   const activityState = ActivityState.useGlobalState();
   const activities = activityState.getActivitiesSelectedCategory();
   const selectedCategory = activityState.getSelectedCategory();
   const router = useRouter();
-  const { slug } = router.query || ['swimming']
 
   useEffect(() => {
     const getData = async () => {
@@ -57,11 +32,12 @@ const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
       activityState.setActivities(data.data.ServiceProviders.ServiceProviders, selectedCategory)
     }
     selectedCategory && getData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCategory]) //don't pass in activityState, because it continues to reload
-  //console.log('activity list', activities)
+  }, [selectedCategory]) //don't pass in activityState
+  //console.log('activities', activities)
 
-   const points = activities.map(activity => ({
+  // ACTIVITY DATA
+  //set variables with states to render activities and selected cat if within viewport
+  const activityFeatures = activities.map(activity => ({
     type: "Feature",
     properties: {
       id: activity.id,
@@ -79,70 +55,123 @@ const Map = ({ mapRef, geoCoder, places, setPlaceClicked, weatherData }) => {
       ]
     },
   }));
- 
-  // ACTIVITY MARKERS
-  const pinSize = (6 * 1.5);
-  const pinStyle = {
-   
-    color: 'red',
-    height: '30px,'
-  };
+  const points = activityFeatures;
+  //console.log('these are the location', points)
 
-  const activityMarkers = points?.map(
-    (point) => (
-      <Marker
-        key={point.id}
-        pinStyle={pinStyle}
-        className={style.activityMarker}
-        longitude={parseFloat(point.geometry.coordinates[1])}
-        latitude={parseFloat(point.geometry.coordinates[0])}
-        offsetLeft={`${-pinSize}` / 2}
-        offsetTop={`${-pinSize}` / 2}
-      />
-    )
+
+  const handleViewportChange = useCallback(
+    (newViewport) => {
+      setViewport(newViewport);
+    },
+    //setClicked({...clicked, zoom: nextViewport.zoom})
+    [setViewport]
   );
 
+  const handleGeocoderViewportChange = useCallback(
+    (newViewport) => {
+      const geocoderDefaultOverrides = { transitionDuration: 1000 };
+      return handleViewportChange({
+        ...newViewport,
+        ...geocoderDefaultOverrides
+      });
+    },
+    [handleViewportChange]
+  );
 
-  const locParams = {
-    country: "is"
+  // ACTIVITY MARKERS
+  const pinSize = (`${viewport.zoom}` * 1.5);
+  const pinStyle = {
+    border: 'none',
+    stroke: 'none',
+    cursor: 'pointer',
+    width: `${pinSize}px`,
+    height: `${pinSize}px`
+  };
+
+  const setWeather = (weatherData) => {
+    setViewport({
+      ...viewport,
+      latitude: weatherData.coord.lat,
+      longitude: weatherData.coord.lon
+    });
+    setWeatherData({
+      weatherData
+    });
+  };
+
+  // input city search
+  const onChangeHandler = (e) => {
+    setCity(e.input.value);
   }
+
+  console.log(onChangeHandler, setCity)
+
   // PLACES MARKERS - LOCATIONS - WEATHER
-  /* const weatherMarkers = weatherData?.map(
-    (data, i) => (
-      <Marker
-        key={i}
-        latitude={data.coord.lat}
-        longitude={data.coord.LinearInterpolator}
-      >
-        Weather
-      </Marker>
-    )
-  ) */
+  /*  const weatherMarkers = weatherData?.map(
+     (data, i) => (
+       <Marker
+         key={i}
+         latitude={data.coord.lat}
+         longitude={data.coord.LinearInterpolator}
+       >
+         Weather
+       </Marker>
+     )
+   ); */
 
-  
+
   return (
-      <ReactMapGL
-        ref={mapRef}
-        mapStyle="mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
-        {...viewport}
-        width='100%'
-        height='100%'
-        onViewportChange={handleViewportChange}
+    <ReactMapGL
+      {...viewport}
+      ref={mapRef}
+      mapStyle="mapbox://styles/arnavala/ckwseyp3o1te715nqrmf4kro7"
+      mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
+      maxZoom={8}
+      minZoom={4}
+      width='100%'
+      height='100%'
+      onResult={onChangeHandler}
+      onViewportChange={handleViewportChange}
+      onInteractionStateChange={(extra) => {
+        if (!extra.isDragging && mapRef.current) {
+          const bounds = mapRef.current.getMap().getBounds();
+          //console.log(bounds)
+          ActivityState.accessGlobalState().setBoundaries(bounds);
+        }
+      }}
+    >
+      <Geocoder
+        mapRef={mapRef}
+        containerRef={geoCoder}
+        onViewportChange={handleGeocoderViewportChange}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
-      >
-        {/* <Geocoder
-          mapRef={mapRef}
-          containerRef={geoCoder}
-          onViewportChange={handleGeocoderViewportChange}
-          mapboxApiAccessToken="pk.eyJ1IjoiYXJuYXZhbGEiLCJhIjoiY2t3ZjM4Z2wzMGFtcjJ3bnU5ZDdhaHFmeCJ9.i-wJdflLC-HJCWPBXQL0JA"
-          placeholder="Search for a destination"
-          queryParams={locParams}
-        /> */}
-
-        {activityMarkers}
-       
-      </ReactMapGL>
+        placeholder="Choose a location"
+        clearOnBlur
+        types={'place'}
+        countries={'is'}
+        marker={true}
+        value={city}
+        onResult={onChangeHandler}
+        updateInputOnSelect={true}
+      />
+      {points.map(point => (
+        <Marker offsetLeft={`${-pinSize}` / 2} offsetTop={`${-pinSize}` / 2} key={point.id} longitude={parseFloat(point.geometry.coordinates[1])} latitude={parseFloat(point.geometry.coordinates[0])} >
+          <button className={style.icon} style={{ ...pinStyle }} />
+        </Marker>
+      ))}
+    </ReactMapGL>
   )
 }
 
 export default Map
+
+/* <GeolocateControl
+          style={{
+            top:24,
+            left: 24,
+            position: 'absolute',
+          }}
+          positionOptions={{enableHighAccuracy: true}}
+          trackUserLocation={true}
+          auto
+        /> */

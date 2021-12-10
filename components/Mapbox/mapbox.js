@@ -33,9 +33,10 @@ const Mapbox = () => {
     }
 
     selectedCategory && getData();
-  }, [selectedCategory])
+  }, [selectedCategory]) //don't pass in activityState
 
-  console.log('activities', activities)
+
+  //console.log('activities', activities)
 
   const newLocal = activities.map(activity => ({
     type: "Feature",
@@ -57,7 +58,7 @@ const Mapbox = () => {
   }))
   // Set coordinates to points to work with mapbox
   const points = newLocal;
-  console.log('these are the location', points)
+  //console.log('these are the location', points)
 
   // set viewport to new locations
   const [viewport, setViewport] = useState({

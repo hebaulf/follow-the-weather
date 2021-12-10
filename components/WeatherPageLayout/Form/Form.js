@@ -11,17 +11,16 @@ import style from './form.module.scss'
 const Form = () => {
   const [city, setCity] = useState('')
   const { viewport, setViewport } = useContext(MapboxContext)
-  const { setData, setLoading } = useContext(WeatherContext)
-  const [error, setError] = useState(false)
+  const { setWeatherData } = useContext(WeatherContext)
   
-  const setWeather = (data) => {
+  const setWeather = (weatherData) => {
     setViewport({
       ...viewport,
-      latitude: data.coord.lat,
-      longitude: data.coord.lon
+      latitude: weatherData.coord.lat,
+      longitude: weatherData.coord.lon
     });
-    setData({
-      data
+    setWeatherData({
+      weatherData
     });
   };
 
@@ -34,16 +33,13 @@ const Form = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const data = await getWeather(city);
+    const weatherData = await getWeather(city);
 
-    if (data.cod !== 200) {
-      setError(data);
-      console.log(data)
+    if (weatherData.cod !== 200) {
+      console.log(weatherData)
     } else {
-      setWeather(data)
-      setError(false);
+      setWeather(weatherData)
     }
-    setLoading(false)
     setCity('');
   };
 

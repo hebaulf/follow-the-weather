@@ -1,12 +1,9 @@
-import Map from '../../Map/map'
 import style from './content.module.scss'
-import ActivityList from '../../ActivityList/ActivityList'
-import Mapbox from '../../Mapbox/mapbox';
 
-const Content = () => {
+const Content = ({children}) => {
   return (
     <div className={style.content}>
-          <Mapbox />
+      {children}
     </div>
   )
 }

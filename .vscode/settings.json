@@ -1,0 +1,6 @@
+{
+  "workbench.editor.highlightModifiedTabs": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.suggest.showColors": true,
+  "editor.suggest.showCustomcolors": true
+}
