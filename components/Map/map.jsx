@@ -100,11 +100,10 @@ const Map = ({ mapRef, geoCoder }) => {
   };
 
   // input city search
-  const onChangeHandler = (e) => {
-    setCity(e.input.value);
-  }
+  /*  const onChangeHandler = (e) => {
+     setCity(e.input.value);
+   } */
 
-  console.log(onChangeHandler, setCity)
 
   // PLACES MARKERS - LOCATIONS - WEATHER
   /*  const weatherMarkers = weatherData?.map(
@@ -130,7 +129,6 @@ const Map = ({ mapRef, geoCoder }) => {
       minZoom={4}
       width='100%'
       height='100%'
-      onResult={onChangeHandler}
       onViewportChange={handleViewportChange}
       onInteractionStateChange={(extra) => {
         if (!extra.isDragging && mapRef.current) {
@@ -151,7 +149,6 @@ const Map = ({ mapRef, geoCoder }) => {
         countries={'is'}
         marker={true}
         value={city}
-        onResult={onChangeHandler}
         updateInputOnSelect={true}
       />
       {points.map(point => (
