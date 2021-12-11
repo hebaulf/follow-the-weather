@@ -5,14 +5,14 @@ An activity based weather app with information on the culture of weather in Icel
 > Be mentally prepared for the <br>
 > ever changing icelandic weather.
 
-<br><br>
+<br>
 
 ### The project is on two branches as is:
 
 - The **main** branch has all the up to date content, styling and motion.
 - The **weather-mapping** branch has all the function and api's for the map and weather connections.
 
-<br><br>
+<br>
 
 ## Links to elements of our project:
 
@@ -26,11 +26,11 @@ An activity based weather app with information on the culture of weather in Icel
 
 ### [The Presentation](https://www.figma.com/proto/NnNlswtGi4FQGvWR2n6klT/No-Bad-Weather---Design?page-id=112%3A1678&node-id=634%3A9258&viewport=241%2C48%2C0.16&scaling=min-zoom&starting-point-node-id=634%3A9258)
 
-<br><br>
+<br>
 
 <img width='100%' src='https://raw.githubusercontent.com/hebaulf/follow-the-weather/main/public/images/promo-img.jpg'>
 
-<br><br>
+<br>
 
 ## The team
 
@@ -39,7 +39,7 @@ We were a mix of people with different skills.
 - **Designers** - Bíbí & Ása (with creative input from Arna Vala)
 - **Coders** - Arna Vala , Heba & Tristan
 
-<br><br>
+<br>
 
 ## Project Management
 
@@ -49,11 +49,14 @@ We used Agile project management methods
 - Used Slack for communication
 - Asana for managing tasks
 
-### As the Asana board is invite only to view. Here is a screenshot of the setup:
+<br>
 
+### As the Asana board is invite only to view. Here is a screenshot of the setup:
+The image can be viewed larger if you click on it and zoom in.  
+<br>
 <img width='100%' src='https://raw.githubusercontent.com/hebaulf/follow-the-weather/main/public/images/asana.png'>
 
-<br><br>
+<br>
 
 ## Design Sprint
 
@@ -62,7 +65,7 @@ As we worked through the week the focus of the project shifted further and futhe
 In the end we thought it would not give the user enough value.  
 Our focus shifted over to getting people prepared for the ever changing weather, by teaching them how Icelanders follow the weather, as well as helping them find activities accordingly.
 
-<br><br>
+<br>
 
 ## Coding
 
@@ -76,7 +79,7 @@ Our focus shifted over to getting people prepared for the ever changing weather,
 - Radix - component library
 - Framer motion - for page transitions
 
-<br><br>
+<br>
 
 ### API's
 
@@ -90,7 +93,7 @@ Our focus shifted over to getting people prepared for the ever changing weather,
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and deployed with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
 
-<br><br>
+<br>
 
 ## Getting Started
 
