@@ -1,6 +1,6 @@
 # Follow the Weather
 
-An activity based weather app with information on the culture of weather in Iceland and how to prepair for it when travelling.
+An activity based weather app with information on the culture of weather in Iceland and how to prepare for it when travelling.
 
 > Be mentally prepared for the <br>
 > ever changing icelandic weather.
