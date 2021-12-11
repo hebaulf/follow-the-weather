@@ -5,6 +5,12 @@ An activity based weather app with information on the culture of weather in Icel
 > ever changing icelandic weather.<br>
 <br>
 
+### The project is on two branches as is:
+- The **main** branch has all the up to date content, styling and motion.
+- The **weather-mapping** branch has all the function and api's for the map and weather connections.
+<br><br>
+
+
 ## Links to elements of our project:
 ### [Live site](https://follow-the-weather.vercel.app/)
 ### [Design Prototype](https://www.figma.com/proto/NnNlswtGi4FQGvWR2n6klT/No-Bad-Weather---Design?page-id=0%3A1&node-id=445%3A8918&viewport=241%2C48%2C0.06&scaling=scale-down&starting-point-node-id=445%3A8918)
@@ -43,11 +49,13 @@ Our focus shifted over to getting people prepared for the ever changing weather,
 - Git / Github
 - Next.js - for react framework
 - Vercel - for hosting
-- Radix - component library
 - Sass components
+- Radix - component library
+- Framer motion - for page transitions
+<br><br>
 
 ### API's
 - Open Weather API
 - Mapbox API
 - Visit Iceland open content API
-
+<br><br>
