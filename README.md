@@ -3,14 +3,16 @@
 An activity based weather app with information on the culture of weather in Iceland and how to prepair for it when travelling.
 
 > Be mentally prepared for the <br>
-> ever changing icelandic weather.<br>
-> <br>
+> ever changing icelandic weather.
+
+<br><br>
 
 ### The project is on two branches as is:
 
 - The **main** branch has all the up to date content, styling and motion.
 - The **weather-mapping** branch has all the function and api's for the map and weather connections.
-  <br><br>
+
+<br><br>
 
 ## Links to elements of our project:
 
@@ -36,7 +38,8 @@ We were a mix of people with different skills.
 
 - **Designers** - Bíbí & Ása (with creative input from Arna Vala)
 - **Coders** - Arna Vala , Heba & Tristan
-  <br><br>
+
+<br><br>
 
 ## Project Management
 
@@ -49,6 +52,7 @@ We used Agile project management methods
 ### As the Asana board is invite only to view. Here is a screenshot of the setup:
 
 <img width='100%' src='https://raw.githubusercontent.com/hebaulf/follow-the-weather/main/public/images/asana.png'>
+
 <br><br>
 
 ## Design Sprint
@@ -57,6 +61,7 @@ We started the project with a 5 day design sprint which helped a lot to understa
 As we worked through the week the focus of the project shifted further and futher away from our initial idea of having a clothing based weather application.  
 In the end we thought it would not give the user enough value.  
 Our focus shifted over to getting people prepared for the ever changing weather, by teaching them how Icelanders follow the weather, as well as helping them find activities accordingly.
+
 <br><br>
 
 ## Coding
@@ -70,18 +75,21 @@ Our focus shifted over to getting people prepared for the ever changing weather,
 - Sass components
 - Radix - component library
 - Framer motion - for page transitions
-  <br><br>
+
+<br><br>
 
 ### API's
 
 - Open Weather API
 - Mapbox API
 - Visit Iceland open content API
-  <br><br><br>
+
+<br><br><br>
 
 # Next.js project deployed with Vercel
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and deployed with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+
 <br><br>
 
 ## Getting Started
@@ -113,6 +121,7 @@ yarn dev
 <br>
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 <br><br>
 
 ## Learn More
@@ -123,6 +132,7 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
 <br><br>
 
 ## Deploy on Vercel
